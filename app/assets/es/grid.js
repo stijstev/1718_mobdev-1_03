@@ -32,16 +32,12 @@ export class GridOverlayElement extends HTMLElement {
     this._canvas2DContext.strokeStyle = '#ff0000';
     this._canvas2DContext.stroke();
 
-    const colWidth =
-      8.33333 * (this._canvasElement.width - 2 * this._gutter) / 100;
+    const colWidth = 8.33333 * (this._canvasElement.width - 2 * this._gutter) / 100;
 
     this._canvas2DContext.beginPath();
     for (let j = 0; j <= 12; j++) {
       this._canvas2DContext.moveTo(this._gutter + j * colWidth, 0);
-      this._canvas2DContext.lineTo(
-        this._gutter + j * colWidth,
-        this._canvasElement.height
-      );
+      this._canvas2DContext.lineTo(this._gutter + j * colWidth, this._canvasElement.height);
     }
     this._canvas2DContext.closePath();
 
@@ -50,22 +46,10 @@ export class GridOverlayElement extends HTMLElement {
 
     this._canvas2DContext.beginPath();
     for (let j = 0; j < 12; j++) {
-      this._canvas2DContext.moveTo(
-        this._gutter + j * colWidth + this._gutter / 2,
-        0
-      );
-      this._canvas2DContext.lineTo(
-        this._gutter + j * colWidth + this._gutter / 2,
-        this._canvasElement.height
-      );
-      this._canvas2DContext.moveTo(
-        this._gutter + (j + 1) * colWidth - this._gutter / 2,
-        0
-      );
-      this._canvas2DContext.lineTo(
-        this._gutter + (j + 1) * colWidth - this._gutter / 2,
-        this._canvasElement.height
-      );
+      this._canvas2DContext.moveTo(this._gutter + j * colWidth + this._gutter / 2, 0);
+      this._canvas2DContext.lineTo(this._gutter + j * colWidth + this._gutter / 2, this._canvasElement.height);
+      this._canvas2DContext.moveTo(this._gutter + (j + 1) * colWidth - this._gutter / 2, 0);
+      this._canvas2DContext.lineTo(this._gutter + (j + 1) * colWidth - this._gutter / 2, this._canvasElement.height);
     }
     this._canvas2DContext.closePath();
 
@@ -76,4 +60,4 @@ export class GridOverlayElement extends HTMLElement {
   delete () {
     this.parentNode.removeChild(this);
   }
-}
+};

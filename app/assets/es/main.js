@@ -18,15 +18,11 @@ class App {
   }
 
   resizeWindow () {
-    this._gridOverlayElement.updateRendering(
-      window.innerWidth,
-      Math.max(
-        window.innerHeight,
-        document.body.offsetHeight,
-        document.documentElement.clientHeight
-      ),
-      24
-    );
+    this._gridOverlayElement.updateRendering(window.innerWidth, Math.max(
+      window.innerHeight,
+      document.body.offsetHeight,
+      document.documentElement.clientHeight
+    ), 24);
   }
 
   init () {
@@ -35,17 +31,12 @@ class App {
     const ps1 = new Person('Philippe', 'De Pauw - Waterschoot');
     console.log(ps1.toString());
 
-    const st1 = new Student(
-      '362453',
-      'philippe.depauw@arteveldehs.be',
-      'Philippe',
-      'De Pauw - Waterschoot'
-    );
+    const st1 = new Student('362453', 'philippe.depauw@arteveldehs.be', 'Philippe', 'De Pauw - Waterschoot');
     console.log(st1.toString());
   }
-}
+};
 
-window.addEventListener('load', ev => {
+window.addEventListener('load', (ev) => {
   const app = new App();
   app.init();
 });

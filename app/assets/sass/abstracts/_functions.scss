@@ -5,3 +5,7 @@
 @function vr-line-height($level) {
   @return #{ceil(map-get($modular-scales, $level))}rem;
 }
+
+@function grid-selector($key){
+  @return #{map-get($grid-prefix-names, $key)};
+}

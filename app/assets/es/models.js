@@ -31,8 +31,6 @@ export class Student extends Person {
 
   toString () {
     const pStr = super.toString();
-    return `${pStr}. I'm a student with number ${this.studentNr} and email ${
-      this.emailSchool
-    }!`;
+    return `${pStr}. I'm a student with number ${this.studentNr} and email ${this.emailSchool}!`;
   }
 }

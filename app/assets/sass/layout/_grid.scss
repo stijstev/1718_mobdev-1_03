@@ -2,22 +2,16 @@
 /// @group layout
 /// @access public
 /// @type Number
-.container {
-  padding: 0 $grid-gutter;
-}
+@include make-fb-grid-container();
 
 /// Grid row
 /// @group layout
 /// @access public
 /// @type Number
-.row {
-  margin: 0 #{-$grid-gutter};
-}
+@include make-fb-grid-row();
 
-/// Grid column: size 12
+/// Grid columns
 /// @group layout
 /// @access public
 /// @type Number
-.col-12 {
-  padding: 0 $grid-gutter;
-}
+@include make-fb-grid-columns()
