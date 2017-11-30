@@ -2,7 +2,9 @@
 'use strict';
 
 import { Person, Student } from './models';
-import { GridOverlayElement } from './grid';
+
+// Voor grid aan en uit te zetten gewoon comments of uncomment :p
+//import { GridOverlayElement } from './grid';
 
 class App {
   constructor () {
