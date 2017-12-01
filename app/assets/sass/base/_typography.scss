@@ -1,5 +1,5 @@
 body {
-  font-family: $base-font-family;
+  font-family: $base-font-family; 
   font-size: #{$base-font-size}px;
   line-height: $base-line-height;
 }
@@ -17,6 +17,7 @@ h6 {
 
 h1 {
   @include type-setting(6);
+  font-size: $headings-font-size;
 }
 
 h2 {
@@ -34,3 +35,5 @@ h4 {
 h5 {
   @include type-setting(2);
 }
+
+
