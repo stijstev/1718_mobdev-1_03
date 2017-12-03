@@ -3,10 +3,10 @@
     -webkit-box-shadow: -1px 6px 34px -9px rgba(0,0,0,0.47);
     -moz-box-shadow: -1px 6px 34px -9px rgba(0,0,0,0.47);
     box-shadow: -1px 6px 34px -9px rgba(0,0,0,0.47);
-    margin: 3.125em;
-    padding: 1.250em; 
+    margin: 50px;
+    padding: 20px; 
     height: 100%;
-    border-radius: 1.063em;
+    border-radius: 17px;
 }
 
 
@@ -21,7 +21,12 @@
     font-weight: 600;
     line-height: 2em; 
     border-bottom: 2px solid #d0d0d0;
+    font-size: 1em;
     
+}
+
+.introduction-card__container .paragraph-2 {
+    font-size: 1em;
 }
 
 
