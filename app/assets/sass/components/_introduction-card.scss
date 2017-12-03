@@ -1,0 +1,29 @@
+.introduction-card__container {
+    background-color: #ffffff;
+    -webkit-box-shadow: -1px 6px 34px -9px rgba(0,0,0,0.47);
+    -moz-box-shadow: -1px 6px 34px -9px rgba(0,0,0,0.47);
+    box-shadow: -1px 6px 34px -9px rgba(0,0,0,0.47);
+    margin: 3.125em;
+    padding: 1.250em; 
+    height: 100%;
+    border-radius: 1.063em;
+}
+
+
+.introduction-card__container h1 {
+   margin-bottom: 10px;
+   line-height: 2em; 
+   border-bottom: 2px solid #d0d0d0;
+   
+}
+
+.introduction-card__container .paragraph-1 {
+    font-weight: 600;
+    line-height: 2em; 
+    border-bottom: 2px solid #d0d0d0;
+    
+}
+
+
+
+
