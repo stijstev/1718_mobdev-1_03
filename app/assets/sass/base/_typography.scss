@@ -4,7 +4,9 @@ body {
   line-height: $base-line-height;
 }
 
-h1,
+h1 {
+  font-size: $headings-font-size; 
+}
 h2,
 h3,
 h4,
@@ -16,7 +18,6 @@ h6 {
 
   margin: #{$base-line-height}rem 0;
 
-  font-size: $headings-font-size;
 }
 
 h1 {

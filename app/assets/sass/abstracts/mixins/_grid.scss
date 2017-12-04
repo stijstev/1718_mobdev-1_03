@@ -52,6 +52,17 @@
 
 }
 
+@mixin make-fb-grid-columns-offset-for-breakpoint($breakpoint-key, $breakpoint-val, $columns-amount: $grid-columns-amount, $gutter-width: $grid-gutter-width) {
+  $breakpoint-key-fix: if($breakpoint-key != 0, '-#{$breakpoint-key}', ''); 
+
+  @for $i from 1 through $columns-amount {
+    #{grid-selector('offset')}#{$breakpoint-key-fix}-#{$i} { 
+      margin-left: #{($i/$columns-amount)*100%};
+    }       
+  }
+
+}
+
 @mixin make-fb-grid-columns($columns-amount: $grid-columns-amount, $gutter-width: $grid-gutter-width, $breakpoints: $grid-breakpoints) {
   %grid-column {
     position: relative;
@@ -76,6 +87,8 @@
   @each $breakpoint-key, $breakpoint-val in $breakpoints {
     @media (min-width: $breakpoint-val) {
       @include make-fb-grid-columns-for-breakpoint($breakpoint-key, $breakpoint-val, $columns-amount, $gutter-width);
+
+      @include make-fb-grid-columns-offset-for-breakpoint($breakpoint-key, $breakpoint-val, $columns-amount, $gutter-width);
     }
   }
 }
