@@ -60,8 +60,19 @@ gulp.task('html', () => {
  Compile Handlebars Pages to HTML
 */
 gulp.task('handlebars:compile', () => {
-  gulp
-    .src('app/_hb/pages/**/*.hbs')
+  const paths = [
+    {
+      "src": "app/_hb/pages/main/**/*.hbs",
+      "dest": "./app"
+    },
+    {
+      "src": "app/_hb/pages/styleguide/**/*.hbs",
+      "dest": "./app/styleguide"
+    }
+  ]
+  paths.forEach((element, index) => {
+    gulp
+    .src(paths[index].src)
     .pipe($.hb({
         partials: 'app/_hb/partials/**/*.hbs',
         helpers: 'app/_hb/helpers/*.js',
@@ -70,7 +81,8 @@ gulp.task('handlebars:compile', () => {
     .pipe($.rename({
       extname: ".html"
     }))
-    .pipe(gulp.dest('./app'));
+    .pipe(gulp.dest(paths[index].dest));
+  });
 });
 
 /*
