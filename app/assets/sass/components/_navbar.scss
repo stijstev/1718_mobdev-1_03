@@ -1,6 +1,10 @@
-/* De navbar is nog niet responsive */
+/* De navbar is nog niet honderd procent responsive */
+/* Later zullen we dit doen met een media query dat als hij op een bepaalde breedte komt dat hij wel responsive wordt */
 
 .main-navbar__container {
+    margin: 0;
+    padding: 0; 
+    height: 100%;
     width: 100%;
 }
 
@@ -10,24 +14,23 @@
     -webkit-box-shadow: -1px 6px 34px -9px rgba(0,0,0,0.47);
     -moz-box-shadow: -1px 6px 34px -9px rgba(0,0,0,0.47);
     box-shadow: -1px 6px 34px -9px rgba(0,0,0,0.47);
-    width: 100%;
+
     height: 270px;
     border-radius: 17px;
+    margin-bottom: 50px;
 }
 
 
 
 .navbar-inner {
     background-color: #ea6232;
-    overflow: hidden;
     width: 100%;
     border-radius: 17px;
+    height: 90%;
 
 }
 
-
+/* Het plaatsen van de hamburger menu, icon en user icon mooi verspreid moeten we nog vinden */
 .navbar-inner a {
-    float: left;
-    display: block;
-    margin: 100px;
+    margin: 125px;
 }
