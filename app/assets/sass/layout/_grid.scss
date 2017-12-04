@@ -1,17 +1,17 @@
-/// Grid container
+/// Make a grid container
 /// @group layout
 /// @access public
-/// @type Number
+/// @type Mixin
 @include make-fb-grid-container();
 
-/// Grid row
+/// Make a grid row
 /// @group layout
 /// @access public
-/// @type Number
+/// @type Mixin
 @include make-fb-grid-row();
 
-/// Grid columns
+/// Make grid columns
 /// @group layout
 /// @access public
-/// @type Number
+/// @type Mixin
 @include make-fb-grid-columns();
