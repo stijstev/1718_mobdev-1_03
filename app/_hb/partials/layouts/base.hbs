@@ -9,9 +9,6 @@
     {{!-- Mobile Viewport --}}
 	  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    <!-- Als we dit toevoegen dan ziet het er in mobile in de console beter uit -->
-    <!-- <meta name="viewport" content="width=device-width, user-scalable=no"> -->
-
     {{> includes/head-seo}}
 
     {{> includes/head-opengraph}}
@@ -25,7 +22,7 @@
 
     {{> includes/head-icons}}
 
-    <link rel="stylesheet" media="all" href="assets/css/main.css">
+    <link rel="stylesheet" media="all" href="{{#if pathToRoot}}{{pathToRoot}}{{/if}}assets/css/main.css">
 
     {{#> head-block}}
       {{!-- Custom <head> content per page. --}}
@@ -35,11 +32,11 @@
   <body>
 
     {{#> content-block}}
-      {{!-- Hero content goes here. --}}
+      {{!-- Content for the page goes here. --}}
     {{/content-block}}
 
     <!-- build:js assets/js/main.min.js -->
-    <script src="assets/js/main.js"></script>
+    <script src="{{#if pathToRoot}}{{pathToRoot}}{{/if}}assets/js/main.js"></script>
     <!-- endbuild -->
 
     {{#> scripts-block}}
