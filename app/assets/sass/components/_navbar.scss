@@ -1,36 +1,46 @@
-/* De navbar is nog niet honderd procent responsive */
-/* Later zullen we dit doen met een media query dat als hij op een bepaalde breedte komt dat hij wel responsive wordt */
-
 .main-navbar__container {
     margin: 0;
     padding: 0; 
     height: 100%;
-    width: 100%;
+    width :100%;
 }
 
 
-.navbar-out {
+.navbar-outer {
     background-color: #ffffff;
+    border-radius :17px;
     -webkit-box-shadow: -1px 6px 34px -9px rgba(0,0,0,0.47);
     -moz-box-shadow: -1px 6px 34px -9px rgba(0,0,0,0.47);
     box-shadow: -1px 6px 34px -9px rgba(0,0,0,0.47);
-
     height: 270px;
-    border-radius: 17px;
-    margin-bottom: 50px;
+
 }
 
 
 
 .navbar-inner {
-    background-color: #ea6232;
-    width: 100%;
+    background-color:  #ea6232;
+    -webkit-box-shadow: -1px 6px 34px -9px rgba(0,0,0,0.47);
+    -moz-box-shadow: -1px 6px 34px -9px rgba(0,0,0,0.47);
+    box-shadow: -1px 6px 34px -9px rgba(0,0,0,0.47);
+
+    height: 80%;
     border-radius: 17px;
-    height: 90%;
-
+    margin: 0 auto;
 }
 
-/* Het plaatsen van de hamburger menu, icon en user icon mooi verspreid moeten we nog vinden */
-.navbar-inner a {
-    margin: 125px;
+
+ //Het plaatsen van de hamburger menu, icon en user icon mooi verspreid moeten we nog vinden 
+ /* Echt perfect verdeeld is het nog niet, d */ 
+ a {
+
+    text-decoration: none;
+    text-align: center;
+    float: left;
+    display: inline;
+    margin-top: 30px;
 }
+
+
+
+  
