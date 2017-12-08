@@ -65,6 +65,7 @@
 
 @mixin make-fb-grid-columns($columns-amount: $grid-columns-amount, $gutter-width: $grid-gutter-width, $breakpoints: $grid-breakpoints) {
   %grid-column {
+    box-sizing: border-box;
     position: relative;
     width: 100%;
     min-height: 1px;
@@ -83,6 +84,8 @@
   #{$list} {
     @extend %grid-column;
   }
+
+  @include make-fb-grid-columns-for-breakpoint(0, 0, $columns-amount, $gutter-width);
 
   @each $breakpoint-key, $breakpoint-val in $breakpoints {
     @media (min-width: $breakpoint-val) {
