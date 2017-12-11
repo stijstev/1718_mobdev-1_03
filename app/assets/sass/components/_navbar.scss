@@ -1,43 +1,37 @@
 .main-navbar__container {
-    margin: 0;
-    padding: 0; 
-    height: 100%;
-    width :100%;
+  position: fixed;
+  margin: 0;
+  padding: 0; 
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+
 }
 
 
 .navbar-outer {
-    background-color: #ffffff;
-    border-radius: 17px;
-    -webkit-box-shadow: -1px 6px 34px -9px rgba(0,0,0,0.47);
-    -moz-box-shadow: -1px 6px 34px -9px rgba(0,0,0,0.47);
-    box-shadow: -1px 6px 34px -9px rgba(0,0,0,0.47);
-    height: 270px;
+  background-color: #ffffff;
+
+  @include shadow($main-shadow);
+
+  height: 12vh;
+  border-radius: $base-radius;
 
 }
-
-
 
 .navbar-inner {
-    background-color:  #ea6232;
-    -webkit-box-shadow: -1px 6px 34px -9px rgba(0,0,0,0.47);
-    -moz-box-shadow: -1px 6px 34px -9px rgba(0,0,0,0.47);
-    box-shadow: -1px 6px 34px -9px rgba(0,0,0,0.47);
+  background-color: $main-orange;
 
-    height: 80%;
-    border-radius: 17px;
+  @include shadow($main-shadow);
+
+  height: 10vh;
+  border-radius: $base-radius;
 }
 
 
- //Het plaatsen van de hamburger menu, icon en user icon mooi verspreid moeten we nog vinden 
- /* Echt perfect verdeeld is het nog niet, d */ 
- a {
-
-    text-decoration: none;
-    text-align: center;
-    margin-top: 30px;
+//Het plaatsen van de hamburger menu, icon en user icon mooi verspreid moeten we nog vinden 
+/* Echt perfect verdeeld is het nog niet, d */ 
+a {
+  text-decoration: none;
+  text-align: center;
 }
-
-
-
-  

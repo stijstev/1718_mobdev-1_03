@@ -1,27 +1,24 @@
 .card-container {
-    background-color: #ffffff;
-    -webkit-box-shadow: -1px 6px 34px -9px rgba(0,0,0,0.47);
-    -moz-box-shadow: -1px 6px 34px -9px rgba(0,0,0,0.47);
-    box-shadow: -1px 6px 34px -9px rgba(0,0,0,0.47);
-    padding: 20px; 
-    border-radius: 17px;
+  background-color: #ffffff;
+  @include shadow($main-shadow);
+  padding: 20px; 
+  border-radius: 17px;
 }
 
 .card h1 {
-    margin-left: 50px;
-    margin-bottom: 10px;
-    line-height: 2em; 
-    border-bottom: 2px solid #d0d0d0;
+  margin-left: 50px;
+  margin-bottom: 10px;
+  line-height: 2em; 
+  border-bottom: 2px solid #d0d0d0;
 }
 .card p {
-    font-weight: 600;
-    line-height: 2em; 
-    font-size: 1em;
+  font-weight: 600;
+  line-height: 2em; 
+  font-size: 1em;
 }
 
 .card-container__underline 
 p,
 h1 {
-    border-bottom: 2px solid #d0d0d0;
+  border-bottom: 2px solid #d0d0d0;
 }
- 
