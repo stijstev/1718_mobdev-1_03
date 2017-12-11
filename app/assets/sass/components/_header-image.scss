@@ -5,27 +5,19 @@
   width: 100%;
 }
 
-
-img {
-  background-size: cover;
-  height: 100%;
-  width: 100%;
-}
-
 .header-image__text-wrapper {
   /* Het positioneren is nog niet op de juiste manier */
-  color: #ffffff;
+  color: #fff;
   position: absolute;
   top: 90%;
   left: 5%;
 }
 
 .header-image__text-wrapper h1 {
-  font-size: 12.500em;
+  font-size: 12.5em;
   margin-bottom: 60px;
 }
 
 .header-image__text-wrapper p {
   margin-left: 40px;
 }
-

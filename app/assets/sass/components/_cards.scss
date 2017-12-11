@@ -1,12 +1,13 @@
 .card-container {
-  background-color: #ffffff;
+  background-color: #fff;
+
   @include shadow($main-shadow);
-  padding: 20px; 
+
+  padding: 20px;
   border-radius: 17px;
 }
 
-.card-container__underline 
-p,
+.card-container__underline p,
 h1 {
   border-bottom: 2px solid #d0d0d0;
 }
