@@ -65,6 +65,7 @@
 
 @mixin make-fb-grid-columns($columns-amount: $grid-columns-amount, $gutter-width: $grid-gutter-width, $breakpoints: $grid-breakpoints) {
   %grid-column {
+    /*display: flex;*/
     box-sizing: border-box;
     position: relative;
     width: 100%;

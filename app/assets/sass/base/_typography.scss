@@ -37,3 +37,18 @@ h4 {
 h5 {
   @include type-setting(2);
 }
+
+.card h1 {
+  line-height: 2em; 
+}
+.card p {
+  font-weight: 600;
+  line-height: 2em; 
+  font-size: 1em;
+}
+
+.center {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+}
