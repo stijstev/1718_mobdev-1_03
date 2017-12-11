@@ -1,0 +1,11 @@
+/// Main shadow parameters
+/// @group abstracts
+/// @access public
+/// @type Map
+$main-shadow: (
+  'h-offset': -1px, 
+  'v-offset': 6px, 
+  'blur': 35px, 
+  'spread': -10px, 
+  'color': rgba(0,0,0,0.47), 
+);
