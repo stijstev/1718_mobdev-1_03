@@ -15,3 +15,14 @@
 /// @access public
 /// @type Mixin
 @include make-fb-grid-columns();
+
+// Development Mode for grid
+#{grid-selector('container')}.dev {
+  @for $i from 1 through $grid-columns-amount {
+    #{grid-selector('column')}-#{$i} { 
+      height: 168px;
+      background: #000000;
+      border: 1px solid #ffff00;
+    }      
+  }
+}

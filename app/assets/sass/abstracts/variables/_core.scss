@@ -20,7 +20,7 @@ $base-line-height: 1.5 !default;
 /// @group abstracts
 /// @access public
 /// @type Number
-$base-font-family: 'Arvo', serif;
+$base-font-family: 'Roboto', sans-serif;
 
 /// Base font weight
 /// @group abstracts
@@ -32,7 +32,7 @@ $base-font-weight: 400;
 /// @group abstracts
 /// @access public
 /// @type Number
-$headings-font-family: 'Montserrat', sans-serif; 
+$headings-font-family: 'Open Sans', sans-serif;
 
 /// Headings font weight
 /// @group abstracts
@@ -140,8 +140,4 @@ $line-heights: (
   13: $base-line-height * 2,
 );
 
-/// Rounded corners radius
-/// @group abstracts
-/// @access public
-/// @type Number
-$base-radius: 5%;
+$base-radius: 5em;
