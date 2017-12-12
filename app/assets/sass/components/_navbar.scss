@@ -12,7 +12,7 @@
 
   @include shadow($main-shadow);
 
-  height: 150px;
+  height: 18vh;
   border-radius: $base-radius;
 }
 
@@ -21,19 +21,11 @@
 
   @include shadow($main-shadow);
 
-  height: 100px;
+  height: 15vh;
   border-radius: $base-radius;
 }
 
 img {
   width: 100px;
   height: 100px;
-}
-
-//Het plaatsen van de hamburger menu, icon en user icon mooi verspreid moeten we nog vinden
-
-/* Echt perfect verdeeld is het nog niet, d */
-a {
-  text-decoration: none;
-  text-align: center;
 }

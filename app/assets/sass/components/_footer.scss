@@ -1,14 +1,7 @@
-.footer__container {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  width: 100%;
-}
-
 .footer-inner {
   background-color: #fff;
   border-radius: 17px;
-  height: 100px;
+  height: 18vh;
 
   @include shadow($main-shadow);
 
@@ -16,11 +9,11 @@
 }
 
 .footer-outer {
-  background-color: #ea6232;
+  background-color: $main-orange;
 
   @include shadow($main-shadow);
 
-  border-radius: 17px;
-  height: 300px;
+  border-radius: $base-radius;
+  height: 15vh;
   z-index: 10;
 }
