@@ -1,8 +1,18 @@
-$vendors: "-moz-", "-webkit-";
+$vendors: '-moz-', '-webkit-';
 
 @mixin shadow($shadow-parameters) {
   @for $i from 1 through length($vendors) {
-    #{nth($vendors, $i)}box-shadow: map-get($shadow-parameters, 'h-offset') map-get($shadow-parameters, 'v-offset') map-get($shadow-parameters, 'blur') map-get($shadow-parameters, 'spread') map-get($shadow-parameters, 'color');
+    #{nth($vendors, $i)}box-shadow:
+
+      map-get($shadow-parameters, 'h-offset')
+      map-get($shadow-parameters, 'v-offset')
+      map-get($shadow-parameters, 'blur') map-get($shadow-parameters, 'spread')
+      map-get($shadow-parameters, 'color');
   }
-  box-shadow: map-get($shadow-parameters, 'h-offset') map-get($shadow-parameters, 'v-offset') map-get($shadow-parameters, 'blur') map-get($shadow-parameters, 'spread') map-get($shadow-parameters, 'color')
+
+  box-shadow:
+
+    map-get($shadow-parameters, 'h-offset')
+    map-get($shadow-parameters, 'v-offset') map-get($shadow-parameters, 'blur')
+    map-get($shadow-parameters, 'spread') map-get($shadow-parameters, 'color');
 }

@@ -15,7 +15,6 @@ h6 {
   @include type-setting(1);
 
   margin: #{$base-line-height}rem 0;
-
 }
 
 h1 {
@@ -39,11 +38,12 @@ h5 {
 }
 
 .card h1 {
-  line-height: 2em; 
+  line-height: 2em;
 }
+
 .card p {
   font-weight: 600;
-  line-height: 2em; 
+  line-height: 2em;
   font-size: 1em;
 }
 

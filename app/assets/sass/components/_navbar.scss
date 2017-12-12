@@ -1,22 +1,19 @@
 .main-navbar__container {
   position: fixed;
   margin: 0;
-  padding: 0; 
+  padding: 0;
   height: 100%;
   width: 100%;
   z-index: 1;
-
 }
 
-
 .navbar-outer {
-  background-color: #ffffff;
+  background-color: #fff;
 
   @include shadow($main-shadow);
 
-  height: 12vh;
+  height: 150px;
   border-radius: $base-radius;
-
 }
 
 .navbar-inner {
@@ -24,13 +21,18 @@
 
   @include shadow($main-shadow);
 
-  height: 10vh;
+  height: 100px;
   border-radius: $base-radius;
 }
 
+img {
+  width: 100px;
+  height: 100px;
+}
 
-//Het plaatsen van de hamburger menu, icon en user icon mooi verspreid moeten we nog vinden 
-/* Echt perfect verdeeld is het nog niet, d */ 
+//Het plaatsen van de hamburger menu, icon en user icon mooi verspreid moeten we nog vinden
+
+/* Echt perfect verdeeld is het nog niet, d */
 a {
   text-decoration: none;
   text-align: center;

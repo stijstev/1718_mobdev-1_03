@@ -1,23 +1,26 @@
 .footer__container {
   margin: 0;
-  padding: 0; 
+  padding: 0;
   height: 100%;
   width: 100%;
 }
 
 .footer-inner {
-  background-color: #ffffff;
+  background-color: #fff;
   border-radius: 17px;
   height: 100px;
+
   @include shadow($main-shadow);
+
   z-index: 5;
 }
 
 .footer-outer {
   background-color: #ea6232;
+
   @include shadow($main-shadow);
+
   border-radius: 17px;
   height: 300px;
   z-index: 10;
 }
-
