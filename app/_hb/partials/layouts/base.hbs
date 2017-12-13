@@ -30,12 +30,13 @@
 
   </head>
   <body>
-    {{> includes/navbar}}
-    {{#> content-block}}
-      {{!-- Content for the page goes here. --}}
-    {{/content-block}}
-    {{> includes/footer}}
-
+    <div class="fb-grid__container">
+      {{> includes/navbar}}
+      {{#> content-block}}
+        {{!-- Content for the page goes here. --}}
+      {{/content-block}}
+      {{> includes/footer}}
+    </div>
     <!-- build:js assets/js/main.min.js -->
     <script src="{{#if pathToRoot}}{{pathToRoot}}{{/if}}assets/js/main.js"></script>
     <!-- endbuild -->

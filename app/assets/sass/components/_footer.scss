@@ -1,19 +1,22 @@
 .footer-inner {
   background-color: #fff;
-  border-radius: 17px;
-  height: 18vh;
-
-  @include shadow($main-shadow);
-
-  z-index: 5;
-}
-
-.footer-outer {
-  background-color: $main-orange;
 
   @include shadow($main-shadow);
 
   border-radius: $base-radius;
-  height: 15vh;
-  z-index: 10;
+  height: 8vh;
+}
+
+.footer-outer {
+  background-color: $main-orange;
+  border-radius: $base-radius;
+  height: 20vh;
+
+  @include shadow($main-shadow);
+}
+
+.footer-icon {
+  margin-top: -2vh;
+  width: 70%;
+  max-width: 50px;
 }

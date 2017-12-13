@@ -7,8 +7,7 @@
   border-radius: $base-radius;
 }
 
-.card-container__underline >
-p,
-h1 {
+.card-container__underline p,
+.card-container__underline h1 {
   border-bottom: 2px solid #d0d0d0;
 }
