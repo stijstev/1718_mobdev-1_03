@@ -15,8 +15,24 @@
   @include shadow($main-shadow);
 }
 
+.footer-outer p {
+  color: #fff;
+  font-size: 0.938em;
+  margin-top: 60px;
+  margin-left: 10px;
+  text-align: center;
+}
+
 .footer-icon {
-  margin-top: -2vh;
+  margin-top: -10px;
   width: 70%;
   max-width: 50px;
+  margin-left: 250px; /* Waarschijnlijk niet de juiste manier om al de iconen naar rechts te brengen :p want het is nog niet echt responsive */
+}
+
+.footer-icon-symbol {
+  width: 30px;
+  max-width: 50px;
+  margin-top: 17px;
+  margin-left: 200px; /* Ook nog niet de juiste manier, nog niet echt responsive */
 }

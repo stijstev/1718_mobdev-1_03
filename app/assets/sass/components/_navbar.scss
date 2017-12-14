@@ -1,6 +1,8 @@
 .navbar-container {
   position: fixed;
   z-index: 1;
+  right: 0;
+  left: 0;
 }
 
 .navbar-outer {
@@ -19,6 +21,7 @@
 
   height: 15vh;
   border-radius: $base-radius;
+  align-items: center; /* zodat de icoontjes mooi verticaal gecenteerd staat */
 }
 
 img {
