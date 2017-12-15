@@ -1,0 +1,25 @@
+.card-project__image-container {
+  width: 100%;
+  height: 80%;
+  overflow: hidden;
+}
+
+.card-project__image-container__stretch {
+  overflow-x: hidden;
+}
+
+.card-project__image {
+  width: 100%;
+  height: 100%;
+}
+
+.card-project__icon {
+  width: 80%;
+  height: 10%;
+  float: left;
+}
+
+.card-project__button-container {
+  flex-flow: row wrap;
+  display: inline-block;
+}

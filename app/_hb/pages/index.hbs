@@ -1,47 +1,58 @@
 {{!-- pages/index.hbs --}}
 
-{{#> layouts/base title="Home | New Media Development | Artevelde University College Ghent" pathToRoot="./" }}
+{{#> layouts/base title="Cartspire | Home" pathToRoot="./" }}
 
   {{#*inline "content-block"}}
-    <!-- SECTION -->
-    <div class="fb-grid__row">
-      <div class="fb-grid__col-12">
-        <div class="header-image__container">
-          <div class="header-image__text-wrapper">
-            <h1>Cartspire</h1>
-            <p>een GDM portfolio</p>
-          </div>
-          <img src="assets/images/placeholder.png" alt="foto van artevelde campus mariakerke">
+  <!-- SECTION -->
+  <div class="fb-grid__row">
+    <div class="fb-grid__col-12">
+      <div class="header-image__container">
+        <div class="header-image__text-wrapper">
+          <h1>Cartspire</h1>
+          <p>een GDM portfolio</p>
         </div>
+        <img src="assets/images/placeholder.png" alt="foto van artevelde campus mariakerke">
       </div>
     </div>
-    <!-- SECTION --->
-    <div class="fb-grid__row">
-      <div class="fb-grid__col-12">
-        <div class="card-container card-container__underline">
-          <h1>Welkom!</h1>
-          <p>
-            Welkom op Cartspire, de GDM portfolio website. Op deze website 
-            vind je de werkstukken van de studenten grafische en digitale media van 
-            de Artevelde Hogeschool.
-          </p>
-          <p>
-            Als je meer wil weten over de opleiding aarzel
-            dan niet om naar de pagina 'opleiding' te gaan. En 
-            voor de laatste updates over de campus en de 
-            richting kan je gaan kijken op onze blog.
-          </p>
-        </div>
+  </div>
+  <!-- SECTION --->
+  <div class="fb-grid__row">
+    <div class="fb-grid__col-12">
+      <div class="card-container card-container__underline">
+        <h1>Welkom!</h1>
+        <p>
+          Welkom op Cartspire, de GDM portfolio website. Op deze website 
+          vind je de werkstukken van de studenten grafische en digitale media van 
+          de Artevelde Hogeschool.
+        </p>
+        <p>
+          Als je meer wil weten over de opleiding aarzel
+          dan niet om naar de pagina 'opleiding' te gaan. En 
+          voor de laatste updates over de campus en de 
+          richting kan je gaan kijken op onze blog.
+        </p>
       </div>
     </div>
-    <div class="fb-grid__row">
-      <div class="fb-grid__col-12">
-        <div class="cards__container">
-          <h1>Van de opleiding</h1>
-          <!-- Hieronder komen dan alle cards -->
-        </div>
+  </div>
+
+  {{#> layouts/cards/card-text width="6" classes="card-container__underline"}}
+    {{#*inline "card-content"}}
+      <h1>Hello world!</h1>
+      <p>This is a test</p>
+    {{/inline}}
+  {{/layouts/cards/card-text}}
+
+  {{#> layouts/cards/card-project width="6" image="assets/images/placeholder.png" alt="A placeholder image"}}
+  {{/layouts/cards/card-project}}
+
+  <div class="fb-grid__row">
+    <div class="fb-grid__col-12">
+      <div class="cards__container">
+        <h1>Van de opleiding</h1>
+        <!-- Hieronder komen dan alle cards -->
       </div>
     </div>
+  </div>
   {{/inline}}
 
   {{#*inline "scripts-block"}}

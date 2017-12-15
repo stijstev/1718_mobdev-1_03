@@ -2,17 +2,26 @@
 'use strict';
 
 import { Person, Student } from './models';
+import { Handlebars } from 'handlebars';
+import { AJAX } from './utils';
 //import { GridOverlayElement } from './grid';
 
 class App {
   constructor () {
     console.log('Constructor of the class');
 
-    document.registerElement('grid-overlay', GridOverlayElement);
+    //document.registerElement('grid-overlay', GridOverlayElement);
 
-    this._gridOverlayElement = document.createElement('grid-overlay');
-    document.body.appendChild(this._gridOverlayElement);
-    this.resizeWindow();
+    //this._gridOverlayElement = document.createElement('grid-overlay');
+    //document.body.appendChild(this._gridOverlayElement);
+    //this.resizeWindow();
+
+    // AJAX TEST
+    console.log('jkjk');
+    AJAX.loadTextByPromise('../templates/showcase.hbs').then((data) => {
+      console.log(data);
+    });
+    
 
     window.addEventListener('resize', () => this.resizeWindow());
   }

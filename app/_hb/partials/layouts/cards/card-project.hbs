@@ -1,0 +1,19 @@
+{{#> layouts/cards/card cardtype="card-project" classes=classes width=width pathToRoot="./" }} <!-- Todo: add ability to pass classes -->
+  {{#*inline "card-structure"}}
+
+  <div class="fb-grid__col-12 card-project__image-container">
+    <img class="card-project__image" src="{{#if image}}{{image}}{{else}}#{{/if}}" alt="{{#if alt}}{{alt}}{{else}}Image{{/if}}">
+  </div>
+  <div class="fb-grid__row card-project__button-container">
+    <div class="fb-grid__col-4 card-project__like-container">
+      <img class="card-project__icon" src="assets/images/symbols/heart.svg" alt="Like">
+      <p class="card-project__likes">0</p>
+    </div>
+    <div class="fb-grid__col-4 card-project__button-container">
+      <img class="card-project__icon" src="assets/images/symbols/heart.svg" alt="Comment">
+      <p class="card-project__comment.svg">0</p>
+    </div>
+  </div>
+
+  {{/inline}}
+{{/layouts/cards/card}}
