@@ -1,0 +1,15 @@
+{{#> layouts/cards/card cardtype="card-text" classes=classes width=width pathToRoot="./" }} <!-- Todo: add ability to pass classes -->
+  {{#*inline "card-structure"}}
+    <div class="fb-grid__row">
+      {{#> card-content}}
+      <!-- This area should contain headers and paragraphs, add them on the page-->
+      {{/card-content}}
+    </div>
+    <div class="fb-grid__row">
+      <div class="fb-grid__row">
+        <img class="fb-grid__col-6 card-icon" src="assets/images/symbols/comment.svg" alt="comment">
+        <p class="fb-grid__col-6 card-project__comment">0</p>
+      </div>
+    </div>
+  {{/inline}}
+{{/layouts/cards/card}}
