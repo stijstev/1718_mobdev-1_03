@@ -28,3 +28,26 @@ img {
   width: 100px;
   height: 100px;
 }
+
+#drop-menu {
+  display: none;
+  background-color: #fff;
+  border-radius: $base-radius;
+  overflow: hidden;
+
+  /* margin: 0 auto; */
+}
+
+#drop-menu a {
+  padding: 10px;
+  margin: 10px;
+  display: block;
+  text-align: center;
+  background-color: rgb(156, 152, 152);
+  border-radius: $base-radius;
+  border: 1px solid $main-orange;
+  color: #000;
+  font-weight: 900;
+  font-size: 10px;
+  font-family: $headings-font-family;
+}
