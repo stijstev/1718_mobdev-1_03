@@ -1,5 +1,4 @@
 'use strict';
-'use strict';
 
 import { Person, Student } from './models';
 import { Handlebars } from 'handlebars';
@@ -17,7 +16,6 @@ class App {
     //this.resizeWindow();
 
     // AJAX TEST
-    console.log('jkjk');
     AJAX.loadTextByPromise('../templates/showcase.hbs').then((data) => {
       console.log(data);
     });
