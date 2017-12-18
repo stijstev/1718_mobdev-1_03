@@ -2,7 +2,7 @@
 'use strict';
 
 import { Person, Student } from './models';
-import { Handlebars } from 'handlebars';
+
 import { AJAX } from './utils';
 // import { GridOverlayElement } from './grid';
 import { DropDown } from './dropdown';

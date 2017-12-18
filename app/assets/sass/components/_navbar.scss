@@ -1,8 +1,7 @@
 .navbar-container {
   position: fixed;
   z-index: 1;
-  right: 0;
-  left: 0;
+  margin-top: -(2 * $gutter-width);
 }
 
 .navbar-outer {
@@ -10,7 +9,7 @@
 
   @include shadow($main-shadow);
 
-  height: 18vh;
+  height: 10vh;
   border-radius: $base-radius;
 }
 
@@ -19,14 +18,14 @@
 
   @include shadow($main-shadow);
 
-  height: 15vh;
+  height: 8vh;
   border-radius: $base-radius;
   align-items: center; /* zodat de icoontjes mooi verticaal gecenteerd staat */
 }
 
-img {
-  width: 100px;
-  height: 100px;
+.navbar-icon {
+  width: 50%;
+  max-width: 60px;
 }
 
 #drop-menu {
@@ -35,19 +34,17 @@ img {
   border-radius: $base-radius;
   overflow: hidden;
 
+  @include shadow($main-shadow);
+
   /* margin: 0 auto; */
 }
 
 #drop-menu a {
-  padding: 10px;
-  margin: 10px;
+  padding: $gutter-width;
+  margin: $gutter-width;
   display: block;
   text-align: center;
-  background-color: rgb(156, 152, 152);
   border-radius: $base-radius;
   border: 1px solid $main-orange;
-  color: #000;
-  font-weight: 900;
-  font-size: 10px;
   font-family: $headings-font-family;
 }

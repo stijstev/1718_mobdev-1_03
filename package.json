@@ -8,8 +8,7 @@
   "license": "MIT",
   "dependencies": {
     "babel-runtime": "^6.26.0",
-    "handlebars": "^4.0.11",
-    "browser": "dist/handlebars.js"
+    "handlebars": "^4.0.11"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",

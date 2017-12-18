@@ -1,20 +1,10 @@
 .header-image__container {
   background: url(); /* Hier zal de image dan komen omgezet naar url */
-  height: 50vh; /* 100% zorgt ervoor dat het overlapt met de navbar, dit willen we niet */
-  width: 100%;
-  border: 2px solid #000;
+  background-color: lightgray;
+  padding-top: 20vh;
 }
 
 .header-image__text-wrapper {
   /* Het positioneren is nog niet op de juiste manier */
   color: #fff;
-}
-
-.header-image__text-wrapper h1 {
-  font-size: 12.5em;
-  margin-bottom: 60px;
-}
-
-.header-image__text-wrapper p {
-  margin-left: 40px;
 }

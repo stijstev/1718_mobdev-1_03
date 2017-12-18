@@ -5,31 +5,36 @@
   {{#*inline "content-block"}}
   <!-- SECTION -->
   <div class="fb-grid__row">
-    <div class="header-image__container">
+    <div class="fb-grid__col-12 header-image__container">
       <div class="header-image__text-wrapper">
         <h1>Cartspire</h1>
         <p>een GDM portfolio</p>
       </div>
-      <img src="assets/images/placeholder.png" alt="foto van artevelde campus mariakerke">
     </div>
   </div>
   <div class="fb-grid__row">
-    {{#> layouts/cards/card-text width="6" classes="card-container__underline"}}
-    {{#*inline "card-content"}}
-      <h1>Hello world!</h1>
-      <p>This is a test</p>
-    {{/inline}}
-    {{/layouts/cards/card-text}}
-
-    {{#> layouts/cards/card-project width="6" image="assets/images/placeholder.png" alt="A placeholder image"}}
-    {{/layouts/cards/card-project}}
+    <div class="fb-grid__col-6">
+      {{#> layouts/cards/card-text classes="card-container__underline"}}
+      {{#*inline "card-content"}}
+        <h1>Hello world!</h1>
+        <p>This is a test</p>
+      {{/inline}}
+      {{/layouts/cards/card-text}}
+    </div>
+    <div class="fb-grid__col-6">
+      {{#> layouts/cards/card-project image="assets/images/placeholder.png" alt="A placeholder image"}}
+      {{/layouts/cards/card-project}}
+    </div>
   </div>
   <div class="fb-grid__row">
-    {{#> layouts/cards/card-author width="12" alt="A placeholder image"}}
-    {{/layouts/cards/card-author}}
+    <div class="fb-grid__col-12">
+      {{#> layouts/cards/card-author alt="A placeholder image"}}
+      {{/layouts/cards/card-author}}
+    </div>
   </div>
   <div class="fb-grid__row">
-    {{#> layouts/cards/card-blog width="12" alt="A placeholder image"}}
+    <div class="fb-grid__col-12">
+      {{#> layouts/cards/card-blog alt="A placeholder image"}}
       {{#*inline "card-content"}}
         <div class="fb-grid__row">
           <div class="fb-grid__col-12">
@@ -39,11 +44,12 @@
         </div>
         <div class="fb-grid__row">
           <div class="fb-grid__col-12">
-            <p>sdnfjsnfjnfbdvbsljkbvmdsvjqsbdjbsjldfbjksndfnsdkfnskdlmnfklmsqnfkmsdfksndfklndsklfsdklmfndsmklqfnsmldkqnfklsnfmklsndfmlknsdfmlknsdmlkfnsdmlkfnsdlkfnsdlmknfqsmdknfmqsnflksdflsdqnfklmqdsnflkqdsnfklsqdnfmklsqdnf</p>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illo quis ipsam eum est enim natus accusantium nemo asperiores dolorem ad libero, corporis sed dolore ullam, ipsa explicabo eos commodi labore.</p>
           </div>
         </div>
-    {{/inline}}
-    {{/layouts/cards/card-blog}}
+      {{/inline}}
+      {{/layouts/cards/card-blog}}
+    </div>
   </div>
 
   <div class="fb-grid__row">

@@ -46,6 +46,12 @@ $headings-font-weight: 400;
 /// @type Number
 $base-radius: 16px;
 
+/// Border radius for all elements
+/// @group abstracts
+/// @access public
+/// @type Number
+$gutter-width: 1rem;
+
 /// Modular Scale Ratios
 /// @group abstracts
 /// @access public
@@ -145,4 +151,3 @@ $line-heights: (
   12: $base-line-height * 2,
   13: $base-line-height * 2
 );
-
