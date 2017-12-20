@@ -38,13 +38,19 @@ $headings-font-family: 'Montserrat', sans-serif;
 /// @group abstracts
 /// @access public
 /// @type Number
-$headings-font-weight: 400;
+$headings-font-weight: 800;
+
+/// Maximum size for icons
+/// @group abstracts
+/// @access public
+/// @type Number
+$max-icon-size: 60px;
 
 /// Border radius for all elements
 /// @group abstracts
 /// @access public
 /// @type Number
-$base-radius: 16px;
+$base-radius: 12px;
 
 /// Border radius for all elements
 /// @group abstracts

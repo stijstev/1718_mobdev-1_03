@@ -54,7 +54,6 @@ class App {
 
     const dd = new DropDown();
     dd.createDropDown();
-    //dd.closeDropDown();
   }
 }
 

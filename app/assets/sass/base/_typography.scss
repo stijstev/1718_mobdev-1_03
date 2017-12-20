@@ -12,6 +12,8 @@ h4,
 h5,
 h6 {
   font-family: $headings-font-family;
+  font-weight: $headings-font-family;
+  margin: 0;
 
   @include type-setting(1);
 
@@ -20,6 +22,8 @@ h6 {
 
 h1 {
   @include type-setting(6);
+
+  line-height: 2rem;
 }
 
 h2 {
@@ -38,12 +42,16 @@ h5 {
   @include type-setting(2);
 }
 
-.center {
-  display: block;
-  margin: 0 auto;
-  text-align: center;
+p {
+  margin: 0;
 }
 
 a {
   text-decoration: none;
+}
+
+.center {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
 }

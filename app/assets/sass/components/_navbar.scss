@@ -1,7 +1,6 @@
 .navbar-container {
   position: fixed;
   z-index: 1;
-  margin-top: -(1 * $gutter-width);
   top: 0;
   left: 0;
 }
@@ -16,18 +15,16 @@
 }
 
 .navbar-inner {
+  position: absolute;
   background-color: $main-orange;
+  z-index: 1;
 
   @include shadow($main-shadow);
 
   height: 8vh;
+  width: 100vw;
   border-radius: $base-radius;
-  align-items: center; /* zodat de icoontjes mooi verticaal gecenteerd staat */
-}
-
-.navbar-icon {
-  width: 50%;
-  max-width: 60px;
+  align-items: center;
 }
 
 #drop-menu {
@@ -35,10 +32,9 @@
   background-color: #fff;
   border-radius: $base-radius;
   overflow: hidden;
+  width: 100vw;
 
   @include shadow($main-shadow);
-
-  /* margin: 0 auto; */
 }
 
 #drop-menu a {

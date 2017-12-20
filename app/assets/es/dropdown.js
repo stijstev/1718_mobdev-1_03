@@ -5,7 +5,6 @@ let menuActive = false;
 
 export class DropDown {
   constructor () {
-    console.log('this is the dropdown');
   }
   createDropDown () {
     hamburger.addEventListener('click', function () {
