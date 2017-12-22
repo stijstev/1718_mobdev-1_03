@@ -37,7 +37,7 @@
   @include shadow($main-shadow);
 }
 
-#drop-menu a {
+.navbar-button {
   padding: $gutter-width;
   margin: $gutter-width;
   display: block;
@@ -45,4 +45,27 @@
   border-radius: $base-radius;
   border: 1px solid $main-orange;
   font-family: $headings-font-family;
+}
+
+.drop-nav {
+  margin-top: 80px; /* Zo zit de dropdown niet weggestoken achter de navbar */
+  border-bottom: 2px solid #d0d0d0;
+}
+
+/* Om de icons mooi in het midden te centreren met flexbox */
+.bottom-row {
+  display: flex;
+  justify-content: center;
+}
+
+.navbar-icon {
+  width: 70%;
+  max-width: 50px;
+}
+
+#line {
+  border: 1px solid #d0d0d0;
+  margin-left: 4px;
+  margin-bottom: 20px;
+  margin-top: 40px;
 }

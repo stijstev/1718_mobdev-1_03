@@ -9,12 +9,18 @@
 
   border-radius: $base-radius;
   height: 8vh;
+
+  /* Voor icons naar rechts te krijgen */
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
 }
 
 .footer-outer {
   background-color: $main-orange;
   border-radius: $base-radius;
   height: 20vh;
+  width: 100%;
 
   @include shadow($main-shadow);
 }
@@ -31,13 +37,6 @@
   margin-top: 10px;
   width: 70%;
   max-width: 50px;
-
-  /* De icoontjes moeten we nog naar rechts kunnen brengen
-  Dit zouden we kunnen doen met flexbox denk ik maar
-  voorlopig werkt dit nog niet. */
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
 }
 
 .footer-icon-symbol {
