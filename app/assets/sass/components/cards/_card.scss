@@ -5,6 +5,8 @@
 
   padding: 20px;
   border-radius: $base-radius;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .card-container__underline p,
@@ -17,4 +19,18 @@
   float: left;
   margin: 0;
   padding: 0;
+}
+
+.card-title {
+  font-size: 3.125rem;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  margin-left: 30px;
+}
+
+.card-text {
+  font-size: 1.4rem;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  margin-left: 30px;
 }

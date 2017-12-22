@@ -4,8 +4,7 @@ let hamburger = document.querySelector('#hamburger-menu');
 let menuActive = false;
 
 export class DropDown {
-  constructor () {
-  }
+  constructor () {}
   createDropDown () {
     hamburger.addEventListener('click', function () {
       console.log('open');
@@ -13,6 +12,7 @@ export class DropDown {
         dropDownMenu.setAttribute('style', 'display: block');
         hamburger.src = '/assets/images/symbols/cross_white.svg';
         hamburger.classList.add('.btn-close');
+
         menuActive = true;
       } else {
         dropDownMenu.setAttribute('style', 'display: none');
