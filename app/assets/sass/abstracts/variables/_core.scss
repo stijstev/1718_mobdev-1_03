@@ -58,6 +58,12 @@ $base-radius: 12px;
 /// @type Number
 $gutter-width: 1rem;
 
+/// Base border thickness and style
+/// @group abstracts
+/// @access public
+/// @type Number
+$base-border: 1px solid $main-light-gray;
+
 /// Modular Scale Ratios
 /// @group abstracts
 /// @access public
