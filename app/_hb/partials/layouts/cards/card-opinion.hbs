@@ -8,11 +8,24 @@
     <div class="fb-grid__row">
       <div class="fb-grid__row">
         <div class="fb-grid__col-6">
-          <img class="icon" src="/assets/images/symbols/comment.svg" alt="comments">
+          <img class="icon" src="/assets/images/symbols/comment.svg" alt="comment">
         </div>
         <div class="fb-grid__col-6">
           <p class="fb-grid__col-6 card-project__comment">0</p>
         </div>
+      </div>
+      <!-- Voor met flexbox naar rechts te alignen heb ik nog niet gevonden 
+      scss staat in education.scss  -->
+      <div class="fb-grid__row align-right-side">
+          <div class="fb-grid__col-6 ">
+              <p>door Stijn Stevens</p>
+
+                <!-- Nu is er placeholder maar dit kunnen we nog laten genereren -->
+              <p class="current_date">17:33</p>
+          </div>
+          <div class="fb-grid__col-6">
+              <img src="" alt="profile_picture">
+          </div>
       </div>
     </div>
   {{/inline}}

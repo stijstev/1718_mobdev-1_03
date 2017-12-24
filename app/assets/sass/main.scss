@@ -1,27 +1,24 @@
 @charset "UTF-8";
 
 // 1. Variables
-@import
-  'abstracts/variables',
+@import 'abstracts/variables',
   'abstracts/fonts',
   'abstracts/functions',
   'abstracts/mixins';
 
 // 2. Base
-@import
-  'base/core',
-  'base/typography';
+@import 'base/core', 'base/typography';
 
 // 3. Layout
-@import
-  'layout/grid';
+@import 'layout/grid';
 
 // 4. Components
-@import
-  'components/gridoverlay',
+@import 'components/gridoverlay',
   'components/cards/cards',
   'components/header-image',
   'components/navbar',
   'components/footer',
   'components/icon',
-  'components/layout';
+  'components/layout',
+  'components/education',
+  'components/login';

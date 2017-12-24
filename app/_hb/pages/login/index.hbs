@@ -1,5 +1,39 @@
 {{#> layouts/base title="Cartspire | Login of registreer" pathToRoot="../" }}
+{{#*inline "content-block"}}
 
+<div class="fb-grid__row">
+    <div class="fb-grid__col-12 header-image__container">
+        <div class="header-image__text-wrapper">
+            <h1>LOGIN</h1>
+        </div>
+    </div>
+</div>
+<div class="fb-grid__row">
+    <div class="fb-grid__col-12">
+        <h1 class="between-cards-title">Log in</h1>
+    </div>
+</div>
+
+<!-- Gemaakt in layouts/cards/card-login -->
+{{#> layouts/cards/card-login classes="card-container__underline"}}
+{{/layouts/cards/card-login}}
+
+<div class="fb-grid__row">
+    <div class="fb-grid__col-12">
+        <h1 class="between-cards-title">Registreer</h1>
+    </div>
+</div>
+
+
+<!-- Gemaakt in layouts/cards/card-register -->
+{{#> layouts/cards/card-register classes="card-container__underline"}}
+{{/layouts/cards/card-register}}
+
+
+
+
+
+{{/inline}}
 
 
 
