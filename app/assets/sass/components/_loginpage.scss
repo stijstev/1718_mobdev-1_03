@@ -1,0 +1,74 @@
+/* LOGINCARD */
+
+.login-form {
+  margin: 10px;
+  margin-bottom: 20px;
+}
+
+.button-col {
+  display: flex;
+  justify-content: center;
+  padding-top: 30px;
+}
+
+.login-button {
+  width: 100%;
+  height: 100%;
+  border: 1px solid $main-orange;
+  border-radius: $base-radius;
+  background-color: #fff;
+  padding: 10px;
+}
+
+/* Ik heb containers gezet rond sommige inputs zodat de border-bottoms lijntje er mooi uitzien zoals in de visual designs */
+.password-container {
+  border-bottom: $base-border;
+  padding-bottom: 30px;
+}
+
+/* REGISTER CARD */
+
+.repeat-password-container {
+  border-bottom: $base-border;
+  padding-bottom: 30px;
+}
+
+.name-container {
+  padding-top: 30px;
+}
+
+input {
+  border-radius: $base-radius;
+  width: 100%;
+}
+
+/* de checkbox een aparte figuur krijgen heb ik nog niet kunnen fixen. */
+.radio {
+  margin: 0.5rem;
+
+  input[type='radio'],
+  input[type='checkbox'] {
+    position: absolute;
+    opacity: 0;
+
+    + .radio-label {
+      &::before {
+        content: '';
+        background: #fff;
+        border-radius: 100%;
+        border: $base-border;
+        display: inline-block;
+        width: 1.4em;
+        height: 1.4em;
+        position: relative; /* zorgt ervoor dat de bolletjes er rechts van staan */
+        top: -0.05em;
+        left: 20em;
+        vertical-align: middle;
+      }
+    }
+  }
+}
+
+.radio-col {
+  margin-top: 10px;
+}

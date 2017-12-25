@@ -61,13 +61,13 @@
       
                   <div class="fb-grid__row bottom-row">
                     <div class="fb-grid__col-2">
-                      <a class="navbar-icon" href="#"><img src="assets/images/symbols/instagram.svg" alt=""></a>
+                      <a class="navbar-icon" href="#"><img src="/assets/images/symbols/instagram.svg" alt=""></a>
                     </div>
                     <div class="fb-grid__col-2">
-                      <a class="navbar-icon" href="#"><img src="assets/images/symbols/facebook.svg" alt=""></a>
+                      <a class="navbar-icon" href="#"><img src="/assets/images/symbols/facebook.svg" alt=""></a>
                     </div>
                     <div class="fb-grid__col-2">
-                      <a class="navbar-icon" href="#"><img src="assets/images/symbols/twitter.svg" alt=""></a>
+                      <a class="navbar-icon" href="#"><img src="/assets/images/symbols/twitter.svg" alt=""></a>
                     </div>
                   </div> 
               </div>
@@ -95,8 +95,10 @@
               <form class="login-form" action="post">
                   <h1>E-Mail</h1>
                   <input type="text" name="email" id="email">
-                  <h1>Wachtwoord</h1>
-                  <input type="password" name="password" id="password">
+                  <div class="password-container">
+                    <h1>Wachtwoord</h1>
+                    <input type="password" name="password" id="password">
+                  </div>
               </form>
           </div> 
       </div>
@@ -116,29 +118,61 @@
 <!-- Gemaakt in layouts/cards/card-register -->
 <div class="card">
       <div class="fb-grid__row">
-          <div class="fb-grid__col-12">
-              <form class="register-form" action="post">
-                  <h1>E-Mail</h1>
-                  <input type="text" name="email" id="email">
-                  <h1>Wachtwoord</h1>
-                  <input type="password" name="password" id="password">
-                  <h1>Herhaal Wachtwoord</h1>
-                  <input type="password" name="repeat-password" id="repeat-password">
+		<div class="fb-grid__col-12">
+			<form class="register-form" action="post">
+				<h1>E-Mail</h1>
+				<input type="text" name="email" id="email">
 
-                  <h1>Naam</h1>
-                  <input type="text" name="name" id="name">
-                  <h1>Gebruikersnaam</h1>
-                  <input type="text" name="username" id="username">
-                  <h1>Herhaal Wachtwoord</h1>
-                  <input type="password" name="repeat-password" id="repeat-password">
-              </form>
-          </div> 
+				<h1>Wachtwoord</h1>
+				<input type="password" name="password" id="password">
+
+				<div class="repeat-password-container">
+					<h1>Herhaal Wachtwoord</h1>
+					<input type="password" name="repeat-password" id="repeat-password">
+				</div>
+
+				<div class="name-container">
+					<h1>Naam</h1>
+					<input type="text" name="name" id="name">
+				</div>
+				
+				<h1>Gebruikersnaam</h1>
+				<input type="text" name="username" id="username">
+
+				<div class="repeat-password-container">
+					<h1>Herhaal Wachtwoord</h1>
+					<input type="password" name="repeat-password" id="repeat-password">
+				</div>
+			</form>
+		</div> 
       </div>
+			<div class="fb-grid__row">
+				<div class="fb-grid__col-12 radio-col">
+					<div class="radio">
+						<input type="checkbox" name="gender" value="male">
+						<label for="f-option" class="radio-label">Ik ben een GDM student</label>
+					</div> 
+					<div class="radio">
+						<input type="radio" name="gender" value="female">
+						<label for="f-option" class="radio-label">Crossmedia</label> 
+					</div>
+					<div class="radio">
+						<input type="radio" name="gender" value="other">
+						<label for="f-option" class="radio-label">Multimedia</label> 
+					</div>
+					<div class="radio">
+						<input type="radio" name="gender" value="other">
+						<label for="f-option" class="radio-label">Multimedia</label> 
+					</div> 
+				</div>
+			</div>
       <div class="fb-grid__row">
-          <div class="fb-grid__col-12 button-col">
-              <button type="submit" class="login-button"><h1>Register</h1></button>
-          </div>
+				<div class="fb-grid__col-12 button-col">
+					<button type="submit" class="login-button"><h1>Register</h1></button>
+				</div>
       </div>
+			
+
 </div>
 
 
