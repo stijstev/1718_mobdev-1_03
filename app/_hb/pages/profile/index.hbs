@@ -1,0 +1,66 @@
+{{#> layouts/base title="Cartspire | Profile" pathToRoot="../" }}
+{{#*inline "content-block"}}
+
+<div class="fb-grid__row">
+    <div class="fb-grid__col-12 header-image__container">
+        <div class="header-image__text-wrapper">
+            <h1>Stijn Stevens</h1>
+            <p>profielpagina</p>
+        </div>
+    </div>
+</div>
+<div class="fb-grid__row">
+	<div class="fb-grid__col-12">
+		{{#> layouts/cards/card-author alt="A placeholder image"}}
+		{{/layouts/cards/card-author}}
+	</div>
+</div>
+<div class="fb-grid__row">
+    <div class="fb-grid__col-12">
+    {{#> layouts/cards/card-text classes="card-container__underline"}}
+        {{#*inline "card-content"}}
+        <div class="fb-grid__row">
+            <div class="fb-grid__col-12">
+                <h1 class="big_title">Bio</h1>
+								<p>28 september 2017</p>
+            </div>
+        </div>
+        <div class="fb-grid__row">
+            <div class="fb-grid__col-12">
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eos, recusandae id ut, repellat fuga nisi debitis, tempore quo quas beatae mollitia consectetur iste quis aliquam eaque suscipit dolores. Quisquam, perferendis?</p>
+            </div>
+        </div>
+        <div class="fb-grid__row">
+            <div class="fb-grid__col-12">
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eos, recusandae id ut, repellat fuga nisi debitis, tempore quo quas beatae mollitia consectetur iste quis aliquam eaque suscipit dolores. Quisquam, perferendis?</p>
+            </div>
+        </div>
+        {{/inline}}
+    {{/layouts/cards/card-text}}
+    </div>
+</div>
+<div class="fb-grid__row">
+	<div class="fb-grid__col-12">
+		<h1 class="between-cards-title">Van deze student</h1>
+	</div>
+</div>
+<div class="fb-grid__row">
+	<div class="fb-grid__col-6">
+		{{#> layouts/cards/card-project image="/assets/images/placeholder.png" alt="A placeholder image"}}
+		{{/layouts/cards/card-project}}
+	</div>
+	<div class="fb-grid__col-6">
+		{{#> layouts/cards/card-project image="/assets/images/placeholder.png" alt="A placeholder image"}}
+		{{/layouts/cards/card-project}}
+	</div>
+</div>
+
+
+
+{{/inline}}
+{{#*inline "scripts-block"}}
+
+
+
+{{/inline}}
+{{/layouts/base}}
