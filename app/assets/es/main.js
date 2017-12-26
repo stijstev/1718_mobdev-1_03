@@ -1,27 +1,16 @@
 'use strict';
-'use strict';
 
 import { Person, Student } from './models';
 
 import { AJAX } from './utils';
 // import { GridOverlayElement } from './grid';
 import { DropDown } from './dropdown';
+//let Handlebars = require('handlebars');
 
 class App {
   constructor () {
-    console.log('Constructor of the class');
 
     // document.registerElement('grid-overlay', GridOverlayElement);
-
-    // this._gridOverlayElement = document.createElement('grid-overlay');
-    // document.body.appendChild(this._gridOverlayElement);
-    // this.resizeWindow();
-
-    // AJAX TEST
-    console.log('jkjk');
-    AJAX.loadTextByPromise('../templates/showcase.hbs').then(data => {
-      console.log(data);
-    });
 
     window.addEventListener('resize', () => this.resizeWindow());
   }
@@ -39,18 +28,11 @@ class App {
   }
 
   init () {
-    console.log('Initialization of the class App');
-
-    const ps1 = new Person('Philippe', 'De Pauw - Waterschoot');
-    console.log(ps1.toString());
-
-    const st1 = new Student(
-      '362453',
-      'philippe.depauw@arteveldehs.be',
-      'Philippe',
-      'De Pauw - Waterschoot'
-    );
-    console.log(st1.toString());
+    let template = '../templates/card-project.html';
+    let context = {likes: 'This is a test', comments:'Five I guess'};
+    let templateScript = Handlebars.compile(template);
+    let html = templateScript(context);
+    console.log(html);
 
     const dd = new DropDown();
     dd.createDropDown();

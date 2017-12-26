@@ -7,7 +7,6 @@ export class DropDown {
   constructor () {}
   createDropDown () {
     hamburger.addEventListener('click', function () {
-      console.log('open');
       if (!menuActive) {
         dropDownMenu.setAttribute('style', 'display: block');
         hamburger.src = '/assets/images/symbols/cross_white.svg';
