@@ -1,0 +1,17 @@
+.top-part { /* Had ik geprobeerd om zo een achtergrond te krijgen op de bovenkant maar werkte nog niet */
+  background-color: grey;
+}
+
+.card-box-title {
+  margin-top: 20px;
+}
+
+.tag {
+  margin-top: 8px;
+  margin-right: 8px;
+  padding-left: 10px;
+  padding-right: 10px;
+  color: $main-orange;
+  border: 2px solid $main-orange;
+  border-radius: $base-radius;
+}
