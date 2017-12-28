@@ -9,8 +9,8 @@ export class SetCardProject {
     this.image = project.images.thumbnail;
     this.likes = project.stats.likes;
     this.project = project;
-    this.db = db
-    this.url = "/detail";
+    this.db = db;
+    this.url = '/detail';
     this.setCard(element);
   }
   setCard (element) {
@@ -32,27 +32,37 @@ export class SetCardLogin {
     this.setCard();
   }
   setCard () {
-    document.querySelector('.login-button').addEventListener('click', () => {this.checkCreds()}, false)
+    document.querySelector('.login-button').addEventListener(
+      'click',
+      () => {
+        this.checkCreds();
+      },
+      false
+    );
   }
 
   checkCreds () {
     let mailField = document.querySelector('#Email-1').value;
     let passField = document.querySelector('#Password-1').value;
 
-    let users = this.db.get('users', (data) => {
+    let users = this.db.get('users', data => {
       data.forEach(user => {
         if (user.email == mailField && user.password == passField) {
           console.log('found');
           let session = new Session(user.id);
           return session.setSession('login');
         }
-      })
-    })
+      });
+    });
   }
 }
 
 function setControls (like, db, dataPath) {
-  like.addEventListener('click', () => {
-    db.set(dataPath, like, db.get(`${dataPath}/likes`) + 1);
-  }, false)
+  like.addEventListener(
+    'click',
+    () => {
+      db.set(dataPath, like, db.get(`${dataPath}/likes`) + 1);
+    },
+    false
+  );
 }

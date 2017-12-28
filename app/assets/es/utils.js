@@ -1,6 +1,6 @@
 'use strict';
 
-import * as firebase from "firebase";
+import * as firebase from 'firebase';
 
 export class DB {
   constructor () {
@@ -13,7 +13,7 @@ export class DB {
   }
   get (dataPath, callback) {
     let data = this.dbRef.ref(dataPath);
-    data.on("value", function(snapshot) {
+    data.on('value', function (snapshot) {
       if (callback) {
         callback(snapshot.val());
       } else {
@@ -43,8 +43,8 @@ export class Session {
   }
   setSession (status) {
     if (status == 'login') {
-      this.ls.set('cartspire_session', this.userId); 
-      return true
+      this.ls.set('cartspire_session', this.userId);
+      return true;
     } else {
       this.ls.remove('cartspire_session');
     }
@@ -53,15 +53,17 @@ export class Session {
 
 export class LocalStorage {
   constructor () {
-    if (typeof(Storage) !== "undefined") {
+    if (typeof Storage !== 'undefined') {
       this.ls = localStorage;
     } else {
-      console.log('Local storage is not supported on this browser, upgrade your browser for the best experience');
+      console.log(
+        'Local storage is not supported on this browser, upgrade your browser for the best experience'
+      );
     }
   }
   get (item) {
     if (this.ls.getItem(item) == null) {
-      return this.ls.getItem(item)
+      return this.ls.getItem(item);
     } else {
       return true;
     }

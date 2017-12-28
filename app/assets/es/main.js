@@ -4,7 +4,7 @@ import { SetCardProject, SetCardLogin, SetProfilePage } from './models';
 
 import { DropDown } from './dropdown';
 
-import * as firebase from "firebase";
+import * as firebase from 'firebase';
 
 import { DB, Session } from './utils';
 
@@ -17,11 +17,11 @@ class App {
   init () {
     this.db.init();
     this.session = this.initSession();
-    
+
     this.setNav();
     this.checkPage();
 
-    //this.cardContent();
+    // this.cardContent();
     const dd = new DropDown();
     dd.createDropDown();
 
@@ -41,12 +41,12 @@ class App {
         break;
     }
   }
-  
+
   cardProject () {
     let tempCards = document.querySelectorAll(`.card-project`);
     if (tempCards.length > 0) {
       tempCards.forEach((element, index) => {
-        this.db.get(`projects/${index}`, (data) => {
+        this.db.get(`projects/${index}`, data => {
           let card = new SetCardProject(data, element, this.db);
         });
       });
@@ -62,7 +62,7 @@ class App {
         tempCards.forEach((element, index) => {
           switch (cardTypes[index]) {
             case 'card-project':
-              this.db.get(`projects/${index}`, (data) => {
+              this.db.get(`projects/${index}`, data => {
                 let card = new SetCardProject(data, element, this.db);
               });
               break;
@@ -80,15 +80,14 @@ class App {
     const navbar = document.querySelector('.navbar-container');
     const navButtons = {
       elLoginBtn: navbar.querySelector('#navbar-login-btn'),
-      elProfileBtn: navbar.querySelector('#navbar-user-profile-btn'),
-    }
+      elProfileBtn: navbar.querySelector('#navbar-user-profile-btn')
+    };
     if (!this.session.userId) {
       console.log(this.session);
       navButtons.elLoginBtn.textContent = 'Log in / Registreer';
       navButtons.elLoginBtn.setAttribute('href', '/login');
 
       navButtons.elProfileBtn.setAttribute('href', '#');
-
     } else {
       navButtons.elLoginBtn.textContent = 'Log uit';
       navButtons.elLoginBtn.setAttribute('href', '#');
@@ -107,7 +106,7 @@ class App {
     let userId = session.checkSession();
 
     let currentPage = document.getElementsByTagName('title')[0].innerHTML;
-    return {sessionObject, userId, currentPage};
+    return { sessionObject, userId, currentPage };
   }
 }
 

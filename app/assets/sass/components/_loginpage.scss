@@ -43,6 +43,8 @@ input {
 }
 
 /* de checkbox een aparte figuur krijgen heb ik nog niet kunnen fixen. */
+
+/*
 .radio {
   margin: 0.5rem;
 
@@ -60,14 +62,19 @@ input {
         display: inline-block;
         width: 1.4em;
         height: 1.4em;
-        position: relative; /* zorgt ervoor dat de bolletjes er rechts van staan */
+        position: relative; 
         top: -0.05em;
         left: 15em;
         vertical-align: middle;
       }
+
+      &:checked::before {
+        background-color: red;
+      }
     }
   }
 }
+*/
 
 .radio-col {
   margin-top: 10px;
