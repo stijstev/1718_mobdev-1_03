@@ -57,12 +57,21 @@ export class SetCardLogin {
   }
 }
 
+export class SetAuthorCard {
+  constructor (name, course) {
+    this.name = name;
+    this.course = course;
+    this.setCard();
+  }
+  setCard () {
+    document.querySelector('.name').textContent = this.name;
+    document.querySelector('.course').textContent = this.course;
+  }
+}
+
 function setControls (like, db, dataPath) {
-  like.addEventListener(
-    'click',
-    () => {
-      db.set(dataPath, like, db.get(`${dataPath}/likes`) + 1);
-    },
-    false
+  like.addEventListener('click', () => {
+    db.update(dataPath, 'likes', parseInt(like.textContent) + 1);
+  }, false
   );
 }

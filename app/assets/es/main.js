@@ -1,6 +1,6 @@
 'use strict';
 
-import { SetCardProject, SetCardLogin, SetProfilePage } from './models';
+import { SetCardProject, SetCardLogin, SetAuthorCard, SetProfilePage } from './models';
 
 import { DropDown } from './dropdown';
 
@@ -19,7 +19,7 @@ class App {
     this.session = this.initSession();
 
     this.setNav();
-    this.checkPage();
+    this.checkPage(); //Perform page specific functions
 
     // this.cardContent();
     const dd = new DropDown();
@@ -29,27 +29,39 @@ class App {
   }
 
   checkPage () {
-    this.cardProject();
-    switch (this.session.currentPage) {
-      case 'Cartspire | Home':
-        console.log('test');
-        cardProject();
-        break;
-      case 'Cartspire | Profile':
-        break;
-      case 'Cartspire | Home':
-        break;
-    }
-  }
-
-  cardProject () {
-    let tempCards = document.querySelectorAll(`.card-project`);
-    if (tempCards.length > 0) {
-      tempCards.forEach((element, index) => {
-        this.db.get(`projects/${index}`, data => {
-          let card = new SetCardProject(data, element, this.db);
+    if (this.session.currentPage == 'Cartspire | Home') {
+      let tempCards = document.querySelectorAll(`.card-project`);
+      if (tempCards.length > 0) {
+        tempCards.forEach((element, index) => {
+          this.db.get(`projects/${index}`, data => {
+            let card = new SetCardProject(data, element, this.db);
+          });
         });
+      }
+    }
+    if (this.session.currentPage == 'Cartspire | Profile' && this.session.userId) {
+      this.db.get(`users/${this.session.userId}`, (data) => {
+        document.querySelector('.author-title').textContent = data.name;
+        let studentId;
+        if (data.isStudent) {
+          studentId = data.id;
+        }
+        this.db.get(`students/${studentId}/course`, (course) => {
+          let card = new SetAuthorCard(data.name, course);
+        });
+        let bio = document.querySelector('.bio');
+        if (data.bio) {
+          bio.textContent = data.bio;
+        } else {
+          bio.style.display = 'none'; //WIP
+        }
       });
+    }
+    if (this.session.currentPage == 'Cartspire | Login' && this.session) {
+      console.log('hello');
+      let card = new SetCardLogin(this.db);
+
+    } else {
     }
   }
 

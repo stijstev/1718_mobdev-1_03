@@ -13,6 +13,7 @@ export class DB {
   }
   get (dataPath, callback) {
     let data = this.dbRef.ref(dataPath);
+    console.log(data);
     data.on('value', function (snapshot) {
       if (callback) {
         callback(snapshot.val());
@@ -20,12 +21,31 @@ export class DB {
         return snapshot.val();
       }
     });
-    return false;
+    return 'Could not get data';
+  }
+
+  /*getWhere (dataPath, key, condition) {
+    while (data)
+      let data = this.get(dataPath);
+
+
+
+      if (data.key == condition
+  }*/
+  
+  update (dataPath, key, value) {
+    let data = {}; 
+    data[key] = value;
+    this.dbRef.ref(dataPath).update(
+      data
+    );
   }
   set (dataPath, key, value) {
-    this.dbRef.ref(dataPath).set({
-      key: value
-    });
+    let data = {}; 
+    data[key] = value; 
+    this.dbRef.ref(dataPath).set(
+      data
+    );
   }
 }
 
@@ -61,13 +81,11 @@ export class LocalStorage {
       );
     }
   }
+
   get (item) {
-    if (this.ls.getItem(item) == null) {
-      return this.ls.getItem(item);
-    } else {
-      return true;
-    }
+    return this.ls.getItem(item);
   }
+
   set (item, value) {
     this.ls.setItem(item, value);
   }
