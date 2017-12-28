@@ -4,9 +4,11 @@
 
   {{#*inline "head-block"}}
   {{/inline}}
-    {{#*inline "content-block"}}
+
+  {{#*inline "content-block"}}
+  <!--
     <div class="fb-grid__row">
-      <div class="card-container fb-grid__col-12">
+      <div class="fb-grid__col-12">
         <h1>Headers</h1>
         <div class="fb-grid__row">
           <h1 class="fb-grid__col-4"><span class="center">test</span></h1>
@@ -17,8 +19,8 @@
     </div>
     <div class="fb-grid__row">
       <div class="fb-grid__col-12">
-        <h1>Fonts</h1>
-        <div class="card-container fb-grid__row">
+        <h1>sqdqsd</h1>
+        <div class="fb-grid__row">
           <h1 class="fb-grid__col-8 "><span>Arvo</span></h1>
           <h1 class="fb-grid__col-2 "><span>test</span></h1>
           <h1 class="fb-grid__col-2 "><span>test</span></h1>
@@ -44,7 +46,68 @@
           <h1 class="fb-grid__col-2 "><span>test</span></h1>
         </div>
       </div>
+    </div>
+
+    -->
+    <div class="fb-grid__row">
+      <div class="fb-grid__col-12 header-image__container">
+        <div class="header-image__text-wrapper">
+          <h1>Styleguide</h1>
+          <p>Cartspire</p>
+        </div>
+      </div>
     </div> 
+    <div class="fb-grid__row">
+    <div class="fb-grid__col-6">
+      {{#> layouts/cards/card-text classes="card-container__underline"}}
+      {{#*inline "card-content"}}
+        <h1>Colors</h1>
+        <div class="fb-grid__row">
+          <div class="fb-grid__col-4">
+            <div class="box">
+              1
+            </div>
+          </div>
+          <div class="fb-grid__col-4">
+            <div class="box">
+              2
+            </div>
+          </div>
+          <div class="fb-grid__col-4">
+            <div class="box">
+              3
+            </div>
+          </div>
+        </div>
+      {{/inline}}
+      {{/layouts/cards/card-text}}
+    </div>
+    <div class="fb-grid__col-6">
+      {{#> layouts/cards/card-text classes="card-container__underline"}}
+      {{#*inline "card-content"}}
+        <h1>Buttons</h1>
+        <div class="fb-grid__row">
+          <div class="fb-grid__col-4">
+            <div class="button">
+              1
+            </div>
+          </div>
+          <div class="fb-grid__col-4">
+            <div class="button">
+              2
+            </div>
+          </div>
+          <div class="fb-grid__col-4">
+            <div class="button">
+              3
+            </div>
+          </div>
+        </div>
+      {{/inline}}
+      {{/layouts/cards/card-text}}
+    </div>
+  </div>
+
   {{/inline}}
 
   {{#*inline "scripts-block"}}
