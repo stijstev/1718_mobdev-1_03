@@ -4,7 +4,6 @@ let hamburger = document.querySelector('#hamburger-menu');
 let menuActive = false;
 
 export class DropDown {
-  constructor () {}
   createDropDown () {
     hamburger.addEventListener('click', function () {
       if (!menuActive) {
@@ -22,12 +21,3 @@ export class DropDown {
     });
   }
 }
-
-//   closeDropDown () {
-//     let cross = document.querySelector('.close_btn');
-//     cross.addEventListener('click', function () {
-//       console.log('close');
-//       dropdownmenu.setAttribute('style', 'display: none');
-//     });
-//   }
-// }

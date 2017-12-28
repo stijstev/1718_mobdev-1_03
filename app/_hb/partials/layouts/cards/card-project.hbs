@@ -1,10 +1,10 @@
-{{#> layouts/cards/card cardtype="card-project" classes=classes width=width pathToRoot="./" }}
+{{#> layouts/cards/card cardtype="card-project" pathToRoot="./" }}
   {{#*inline "card-structure"}}
 
   <div class="fb-grid__row">
     <div class="fb-grid_-col-12">
       <div class="card-image__container">
-        <img class="card-image" src="{{#if image}}{{image}}{{else}}#{{/if}}" alt="{{#if alt}}{{alt}}{{else}}Image{{/if}}">
+        <a href="#"><img class="card-image" src="{{#if image}}{{image}}{{else}}#{{/if}}" alt="{{#if alt}}{{alt}}{{else}}Image{{/if}}"></a>
       </div>
     </div>
   </div>
@@ -16,7 +16,7 @@
           <img class="icon" src="/assets/images/symbols/heart.svg" alt="Like">
         </div>
         <div class="fb-grid__col-6">
-          <p class="card-project__likes">0</p>
+          <p class="card-likes">0</p>
         </div>
       </div>
     </div>
@@ -26,7 +26,7 @@
           <img class="icon" src="/assets/images/symbols/comment.svg" alt="comment">
         </div>
         <div class="fb-grid__col-6">
-          <p class="card-project__comment">0</p>
+          <p class="card-comments">0</p>
         </div>
       </div>
     </div>

@@ -21,6 +21,7 @@ import path from 'path';
 import pkg from './package.json';
 import runSequence from 'run-sequence';
 import sassdoc from 'sassdoc';
+import firebase from 'firebase';
 
 const $ = gulpLoadPlugins();
 const reload = browserSync.reload;

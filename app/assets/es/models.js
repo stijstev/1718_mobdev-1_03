@@ -1,36 +1,58 @@
 'use strict';
 
-export class Post {
-  constructor (title, synopsis, body, createdDate = new Date().getTime()) {
-    this.title = title;
-    this.synopsis = synopsis;
-    this.body = body;
-    this.createdDate = createdDate;
+import { Session } from './utils.js';
+
+import * as firebase from 'firebase';
+
+export class SetCardProject {
+  constructor (project, element, db) {
+    this.image = project.images.thumbnail;
+    this.likes = project.stats.likes;
+    this.project = project;
+    this.db = db
+    this.url = "/detail";
+    this.setCard(element);
+  }
+  setCard (element) {
+    element.querySelector('.card-image').setAttribute('src', this.image);
+
+    let elLikes = element.querySelector('.card-likes');
+    elLikes.textContent = this.likes;
+    console.log(elLikes);
+
+    setControls(elLikes, this.db, `projects/${this.project.id}/stats`);
+
+    return true;
   }
 }
 
-export class Person {
-  constructor (firstName, surName, dayOfBirth = null) {
-    this.firstName = firstName;
-    this.surName = surName;
-    this.dayOfBirth = dayOfBirth;
+export class SetCardLogin {
+  constructor (db) {
+    this.db = db;
+    this.setCard();
+  }
+  setCard () {
+    document.querySelector('.login-button').addEventListener('click', () => {this.checkCreds()}, false)
   }
 
-  toString () {
-    return `My name is ${this.firstName} ${this.surName}`;
+  checkCreds () {
+    let mailField = document.querySelector('#Email-1').value;
+    let passField = document.querySelector('#Password-1').value;
+
+    let users = this.db.get('users', (data) => {
+      data.forEach(user => {
+        if (user.email == mailField && user.password == passField) {
+          console.log('found');
+          let session = new Session(user.id);
+          return session.setSession('login');
+        }
+      })
+    })
   }
 }
 
-export class Student extends Person {
-  constructor (studentNr, emailSchool, firstName, surName, dayOfBirth = null) {
-    super(firstName, surName, dayOfBirth);
-
-    this.studentNr = studentNr;
-    this.emailSchool = emailSchool;
-  }
-
-  toString () {
-    const pStr = super.toString();
-    return `${pStr}. I'm a student with number ${this.studentNr} and email ${this.emailSchool}!`;
-  }
+function setControls (like, db, dataPath) {
+  like.addEventListener('click', () => {
+    db.set(dataPath, like, db.get(`${dataPath}/likes`) + 1);
+  }, false)
 }

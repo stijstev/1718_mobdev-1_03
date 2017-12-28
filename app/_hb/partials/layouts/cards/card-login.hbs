@@ -1,21 +1,21 @@
-{{#> layouts/cards/card cardtype="card-text" classes=classes width=width pathToRoot="./" }} <!-- Todo: add ability to pass classes -->
+{{#> layouts/cards/card cardtype="card-login" pathToRoot="./" }} <!-- Todo: add ability to pass classes -->
   {{#*inline "card-structure"}}
-      <div class="fb-grid__row">
-          <div class="fb-grid__col-12">
-              <form class="login-form" action="post">
-                  <p>E-Mail</p>
-                  <input type="text" name="email" id="Email-1">
-                  <div class="password-container">
-                    <p>Wachtwoord</p>
-                    <input type="password" name="password" id="Password-1">
-                  </div>
-              </form>
-          </div> 
-      </div>
-      <div class="fb-grid__row">
-          <div class="fb-grid__col-12 button-col">
-              <button type="submit" class="login-button"><h1>Login</h1></button>
+    <div class="fb-grid__row">
+      <div class="fb-grid__col-12">
+        <form class="login-form" action="post">
+          <p>E-Mail</p>
+          <input type="text" name="email" id="Email-1">
+          <div class="password-container">
+            <p>Wachtwoord</p>
+            <input type="password" name="password" id="Password-1">
           </div>
-      </div>
+        </form>
+      </div> 
+    </div>
+    <div class="fb-grid__row">
+        <div class="fb-grid__col-12 button-col">
+            <button type="submit" class="login-button"><h1>Login</h1></button>
+        </div>
+    </div>
   {{/inline}}
 {{/layouts/cards/card}}

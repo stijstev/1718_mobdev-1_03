@@ -1,21 +1,21 @@
-{{#> layouts/cards/card cardtype="card-text" classes=classes width=width pathToRoot="./" }} <!-- Todo: add ability to pass classes -->
-  {{#*inline "card-structure"}}
-		<div class="fb-grid__row">
-			<div class="fb-grid__col-12">
-				<div class="fb-grid__row">
-					{{#> card-content}}
-					<!-- Hier komen de cards die we willen tonen --> 
-					{{/card-content}}
-				</div>
-				<div class="fb-grid__row card-box-title">
-					<h1>Uitgelicht</h1>
-				</div>
-				<div class="fb-grid__row">
-					<div class="tag">Photo</div>
-					<div class="tag">Sattelites</div>
-					<div class="tag">Illustratie</div>
-				</div>
-			</div>
-		</div>
-	{{/inline}}
-{{/layouts/cards/card}}
+{{#> layouts/cards/card cardtype="card-box" pathToRoot="./" }}
+<!-- Todo: add ability to pass classes -->
+{{#*inline "card-structure"}}
+<div class="fb-grid__row">
+  <div class="fb-grid__col-12">
+    <div class="fb-grid__row">
+      {{#> card-content}}
+      <!-- Hier komen de cards die we willen tonen -->
+      {{/card-content}}
+    </div>
+    <div class="fb-grid__row card-box-title">
+      <h1>Uitgelicht</h1>
+    </div>
+    <div class="fb-grid__row">
+      <div class="tag">Photo</div>
+      <div class="tag">Sattelites</div>
+      <div class="tag">Illustratie</div>
+    </div>
+  </div>
+</div>
+{{/inline}} {{/layouts/cards/card}}

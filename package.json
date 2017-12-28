@@ -8,6 +8,7 @@
   "license": "MIT",
   "dependencies": {
     "babel-runtime": "^6.26.0",
+    "firebase": "^4.8.1",
     "handlebars": "^4.0.11"
   },
   "devDependencies": {
