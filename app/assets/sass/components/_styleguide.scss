@@ -1,10 +1,81 @@
-.box {
+/* BASE layout */
+.titles {
+  margin-bottom: 20px;
+}
+
+.first-row {
+  margin-bottom: 15px;
+}
+
+.second-row {
+  margin-bottom: 15px;
+}
+
+/* COLORS */
+.circle {
   background-color: red;
   text-align: center;
   border-radius: 50%;
 }
 
+.circle-one {
+  background-color: $main-orange;
+}
+
+.circle-two {
+  background-color: #fff;
+  border: $base-border;
+}
+
+.circle-three {
+  background-color: #000;
+}
+
+.circle-four {
+  background-color: $main-light-gray;
+}
+
 .button {
-    background-color: green;
-    text-align: center;
+  text-align: center;
+}
+
+/* BUTTONS */
+
+.button-one {
+  border-radius: $base-radius;
+  border: 2px solid $main-orange;
+  font-weight: bold;
+}
+
+.button-two {
+  text-align: center;
+  border-radius: $base-radius;
+  border: 1px solid $main-orange;
+  font-family: $headings-font-family;
+}
+
+.button-three {
+  border: 1px solid $main-orange;
+  border-radius: $base-radius;
+  background-color: #fff;
+}
+
+/* TAGS */
+
+.tag {
+  margin-top: 8px;
+  margin-right: 8px;
+  padding-left: 10px;
+  padding-right: 10px;
+  color: $main-orange;
+  border: 2px solid $main-orange;
+  border-radius: $base-radius;
+  text-align: center;
+}
+
+/* ICONS */
+
+.styleguide-icon {
+  background-color: $main-light-gray;
+  border: 2px solid #000;
 }
