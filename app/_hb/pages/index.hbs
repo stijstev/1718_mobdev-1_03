@@ -15,7 +15,6 @@
   <div class="fb-grid__row">
     <div class="fb-grid__col-12">
       {{#> layouts/cards/card-box classes="card-container__underline"}}
-      <!-- Hier komen de cards die we willen tonen --> 
         {{#*inline "card-content"}}
           <div class="fb-grid__col-6">
             {{#> layouts/cards/card-project image="assets/images/placeholder.png" alt="A placeholder image"}}
@@ -29,21 +28,17 @@
       {{/layouts/cards/card-box}}
     </div>
   </div>
-  <div class="fb-grid__row">
-    <div class="fb-grid__col-12">
-      {{#> layouts/cards/card-author alt="A placeholder image"}}
-      {{/layouts/cards/card-author}}
-    </div>
-  </div>
+  
 
   <div class="fb-grid__row">
+    <div class="fb-grid__col-12 cards__container">
+      <h1 class="between-cards-title">Van de opleiding</h1>
+    </div>
+  </div>
+  <div class="fb-grid__row">
     <div class="fb-grid__col-6">
-      {{#> layouts/cards/card-text classes="card-container__underline"}}
-      {{#*inline "card-content"}}
-        <h1>Hello world!</h1>
-        <p>This is a test</p>
-      {{/inline}}
-      {{/layouts/cards/card-text}}
+      {{#> layouts/cards/card-project image="assets/images/placeholder.png" alt="A placeholder image"}}
+      {{/layouts/cards/card-project}}
     </div>
     <div class="fb-grid__col-6">
       {{#> layouts/cards/card-project image="assets/images/placeholder.png" alt="A placeholder image"}}
@@ -51,36 +46,13 @@
     </div>
   </div>
   <div class="fb-grid__row">
-    <div class="fb-grid__col-12">
-      {{#> layouts/cards/card-author alt="A placeholder image"}}
-      {{/layouts/cards/card-author}}
+    <div class="fb-grid__col-6">
+      {{#> layouts/cards/card-project image="assets/images/placeholder.png" alt="A placeholder image"}}
+      {{/layouts/cards/card-project}}
     </div>
-  </div>
-  <div class="fb-grid__row">
-    <div class="fb-grid__col-12">
-      {{#> layouts/cards/card-blog classes="card-container__underline"}}
-      {{#*inline "card-content"}}
-        <div class="fb-grid__row">
-          <div class="fb-grid__col-12">
-            <h1>A blog post!</h1>
-            <p>7 december 2017</p>
-          </div>
-        </div>
-        <div class="fb-grid__row">
-          <div class="fb-grid__col-12">
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illo quis ipsam eum est enim natus accusantium nemo asperiores dolorem ad libero, corporis sed dolore ullam, ipsa explicabo eos commodi labore.</p>
-          </div>
-        </div>
-      {{/inline}}
-      {{/layouts/cards/card-blog}}
-    </div>
-  </div>
-
-  <div class="fb-grid__row">
-    <div class="fb-grid__col-12 cards__container">
-      <!-- opmaak voor title is te vinden in layout.scss -->
-      <h1 class="between-cards-title">Van de opleiding</h1>
-      <!-- Hieronder komen dan alle cards -->
+    <div class="fb-grid__col-6">
+      {{#> layouts/cards/card-project image="assets/images/placeholder.png" alt="A placeholder image"}}
+      {{/layouts/cards/card-project}}
     </div>
   </div>
   {{/inline}}
