@@ -21,7 +21,7 @@ export class DB {
         return snapshot.val();
       }
     });
-    return 'Could not get data';
+    return false;
   }
 
   /*getWhere (dataPath, key, condition) {
@@ -33,18 +33,14 @@ export class DB {
       if (data.key == condition
   }*/
   
-  update (dataPath, key, value) {
-    let data = {}; 
-    data[key] = value;
+  update (dataPath, value) {
     this.dbRef.ref(dataPath).update(
       data
     );
   }
-  set (dataPath, key, value) {
-    let data = {}; 
-    data[key] = value; 
+  set (dataPath, value) {
     this.dbRef.ref(dataPath).set(
-      data
+      value
     );
   }
 }

@@ -1,60 +1,61 @@
-{{#> layouts/cards/card cardtype="card-register" pathToRoot="./" }} <!-- Todo: add ability to pass classes -->
-  {{#*inline "card-structure"}}
-      <div class="fb-grid__row">
-		<div class="fb-grid__col-12">
-			<form class="register-form" action="post">
-				<p>E-Mail</p>
-				<input type="text" name="email" id="Email-2">
+{{#> layouts/cards/card cardtype="card-register" pathToRoot="./" }}
+<!-- Todo: add ability to pass classes -->
+{{#*inline "card-structure"}}
+<div class="fb-grid__row">
+  <div class="fb-grid__col-12">
+    <form class="register-form" action="post">
+      <p>E-Mail</p>
+      <input type="text" name="email" id="Email-2">
 
-				<p>Wachtwoord</p>
-				<input type="password" name="password" id="Password-2">
+      <p>Wachtwoord</p>
+      <input type="password" name="password" id="Password-2">
 
-				<div class="repeat-password-container">
-					<p>Herhaal Wachtwoord</p>
-					<input type="password" name="repeat-password" id="Repeat-password-1">
-				</div>
-
-				<div class="name-container">
-					<p>Naam</p>
-					<input type="text" name="name" id="Name">
-				</div>
-				
-				<p>Gebruikersnaam</p>
-				<input type="text" name="username" id="Username">
-
-				<div class="repeat-password-container">
-					<p>Herhaal Wachtwoord</p>
-					<input type="password" name="repeat-password" id="Repeat-password-2">
-				</div>
-			</form>
-		</div> 
+      <div class="repeat-password-container">
+        <p>Herhaal Wachtwoord</p>
+        <input type="password" name="repeat-password" id="Repeat-password-1">
       </div>
-		<div class="fb-grid__row">
-			<div class="fb-grid__col-12 radio-col">
-				<div class="radio">
-					<input type="checkbox" name="is-student">
-					<label for="is-student" class="radio-label"><span></span>Ik ben een GDM student</label>
-				</div> 
-				<div class="radio">
-					<input type="radio" name="course-crossmedia">
-					<label for="course-crossmedia" class="radio-label"><span></span>Crossmedia</label> 
-				</div>
-				<div class="radio">
-					<input type="radio" name="course-multimedia">
-					<label for="course-multimedia" class="radio-label"><span></span>Multimedia</label> 
-				</div>
-				<div class="radio">
-					<input type="radio" name="course-grafimediabeleid">
-					<label for="course-grafimediabeleid" class="radio-label"><span></span>Grafimediabeleid</label> 
-				</div> 
-			</div>
-		</div>
-      	<div class="fb-grid__row">
-			<div class="fb-grid__col-12 button-col">
-				<button type="submit" class="login-button"><h1>Register</h1></button>
-			</div>
-      	</div>
-			
 
-  {{/inline}}
-{{/layouts/cards/card}}
+      <div class="name-container">
+        <p>Naam</p>
+        <input type="text" name="name" id="Name">
+      </div>
+
+      <p>Gebruikersnaam</p>
+      <input type="text" name="username" id="Username">
+    </form>
+  </div>
+</div>
+<div class="fb-grid__row">
+  <div class="fb-grid__col-12 radio-col">
+    <div class="radio">
+      <input type="checkbox" name="is-student" id="Is-student">
+      <label for="is-student" class="radio-label">
+        <span></span>Ik ben een GDM student</label>
+    </div>
+    <div class="radio">
+      <input type="radio" name="course-crossmedia">
+      <label for="course-crossmedia" class="radio-label">
+        <span></span>Crossmedia</label>
+    </div>
+    <div class="radio">
+      <input type="radio" name="course-multimedia">
+      <label for="course-multimedia" class="radio-label">
+        <span></span>Multimedia</label>
+    </div>
+    <div class="radio">
+      <input type="radio" name="course-grafimediabeleid">
+      <label for="course-grafimediabeleid" class="radio-label">
+        <span></span>Grafimediabeleid</label>
+    </div>
+  </div>
+</div>
+<div class="fb-grid__row">
+  <div class="fb-grid__col-12 button-col">
+    <button type="submit" class="login-button" id="register-button">
+      <h1>Register</h1>
+    </button>
+  </div>
+</div>
+
+
+{{/inline}} {{/layouts/cards/card}}

@@ -1,6 +1,6 @@
 'use strict';
 
-import { SetCardProject, SetCardLogin, SetAuthorCard, SetProfilePage } from './models';
+import { SetCardProject, SetCardLogin, SetCardRegister, SetAuthorCard, SetProfilePage } from './models';
 
 import { DropDown } from './dropdown';
 
@@ -59,7 +59,9 @@ class App {
     }
     if (this.session.currentPage == 'Cartspire | Login' && this.session) {
       console.log('hello');
-      let card = new SetCardLogin(this.db);
+      let cardLogin = new SetCardLogin(this.db);
+      let cardRegister = new SetCardRegister(this.db);
+
 
     } else {
     }
