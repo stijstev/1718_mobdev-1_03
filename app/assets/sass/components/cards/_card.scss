@@ -9,12 +9,13 @@
 }
 
 /*.card-underline h1, */
-.card-underline p {
+/*.card-underline p {
   border-bottom: $base-border;
-}
+} */
 
 .card-overline {
   border-top: $base-border;
+  margin-top: 10px;
 }
 
 .card-align-bottom {
