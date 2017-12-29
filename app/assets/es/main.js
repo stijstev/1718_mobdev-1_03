@@ -1,16 +1,17 @@
 'use strict';
 
-import { SetCardProject, SetCardLogin, SetCardRegister, SetAuthorCard, SetProfilePage } from './models';
+import { SetCardProject, SetCardLogin, SetCardRegister, SetAuthorCard, SetProfilePage, SetDetailCard } from './models';
 
 import { DropDown } from './dropdown';
 
 import * as firebase from 'firebase';
 
-import { DB, Session } from './utils';
+import { DB, Session, LocalStorage } from './utils';
 
 class App {
   constructor () {
     this.db = new DB();
+    this.ls = new LocalStorage();
     this.session = null;
   }
 
@@ -34,7 +35,7 @@ class App {
       if (tempCards.length > 0) {
         tempCards.forEach((element, index) => {
           this.db.get(`projects/${index}`, data => {
-            let card = new SetCardProject(data, element, this.db);
+            let card = new SetCardProject(data, element, this.db, this.ls);
           });
         });
       }
@@ -57,37 +58,29 @@ class App {
         }
       });
     }
-    if (this.session.currentPage == 'Cartspire | Login' && this.session) {
+    if (this.session.currentPage == 'Cartspire | Blog') {
+      let tempCards = document.querySelectorAll(`.card-project`);
+      if (tempCards.length > 0) {
+        tempCards.forEach((element, index) => {
+          this.db.get(`projects/${index}`, data => {
+            let card = new SetCardProject(data, element, this.db, this.ls);
+          });
+        });
+      }
+    }
+    if (this.session.currentPage == 'Cartspire | Login') {
       console.log('hello');
       let cardLogin = new SetCardLogin(this.db);
       let cardRegister = new SetCardRegister(this.db);
-
-
+    }
+    if (this.session.currentPage == 'Cartspire | Detail Page') {
+      this.db.get(`projects/${this.ls.get('lastClick')}`, (data) => {
+        let card = new SetDetailCard(data, this.db);
+        document.querySelector('.detail-desc').textContent = data.description;
+        this.setHeaderImage(data.images.thumbnail, document.querySelector('.header-image__container'));
+      })
     } else {
     }
-  }
-
-  cardContent () {
-    const cardTypes = ['card-project', 'card-login', 'card-author']; //, 'card-author', 'card-text', 'card-register', 'card-opinion', 'card-blog', 'card-box'];
-
-    cardTypes.forEach((element, index) => {
-      let tempCards = document.querySelectorAll(`.${cardTypes[index]}`);
-      if (tempCards.length > 0) {
-        tempCards.forEach((element, index) => {
-          switch (cardTypes[index]) {
-            case 'card-project':
-              this.db.get(`projects/${index}`, data => {
-                let card = new SetCardProject(data, element, this.db);
-              });
-              break;
-
-            case 'card-login':
-              let card = new SetCardLogin(this.db);
-              break;
-          }
-        });
-      }
-    });
   }
 
   setNav () {
@@ -116,11 +109,17 @@ class App {
 
   initSession () {
     let session = new Session();
-    let sessionObject = session;
     let userId = session.checkSession();
-
+    if (!userId) {
+      session.setSession('unregistered');
+    }
+    let sessionObject = session;
     let currentPage = document.getElementsByTagName('title')[0].innerHTML;
     return { sessionObject, userId, currentPage };
+  }
+
+  setHeaderImage (url, element) {
+    element.style.background = `url(${url}) no-repeat fixed center`;
   }
 }
 

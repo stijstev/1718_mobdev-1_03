@@ -4,23 +4,24 @@ import { Session } from './utils.js';
 
 import * as firebase from 'firebase';
 
-import DB from './utils.js';
+import { DB, LocalStorage } from './utils.js';
 
 export class SetCardProject {
-  constructor (project, element, db) {
+  constructor (project, element, db, ls) {
     this.image = project.images.thumbnail;
     this.likes = project.stats.likes;
     this.project = project;
     this.db = db;
-    this.url = '/detail';
+    this.ls = ls
     this.setCard(element);
   }
   setCard (element) {
+    element.querySelector('.card-image-url').addEventListener('click', () => {this.ls.set('lastClick', this.project.id)});
     element.querySelector('.card-image').setAttribute('src', this.image);
+    
 
     let elLikes = element.querySelector('.card-likes');
     elLikes.textContent = this.likes;
-    console.log(elLikes);
 
     setControls(elLikes, this.db, `projects/${this.project.id}/stats`);
   }
@@ -40,15 +41,40 @@ export class SetCardLogin {
   )};
 }
 
+export class SetDetailCard {
+  constructor (data, db) {
+    console.log(data);
+    this.title = data.name;
+    this.studentId = data.studentIds[0];
+    this.date = `${data.createdDate.day} / ${data.createdDate.month} / ${data.createdDate.year}`;
+    this.tags = data.tagIds;
+    this.db = db;
+    this.setCard();
+  }
+  setCard () {
+    console.log(this.tags);
+    document.querySelector('.detail-title').textContent = this.title;
+    document.querySelector('.detail-date').textContent = this.date;
+
+    this.tags.forEach((element, index) => {
+      this.db.get(`tags/${this.tags[index]}`, (data) => {
+        document.querySelector('.tag-row').innerHTML += `<div class='tag'>${data.name}</div>`
+      })
+    });
+
+    this.db.get(`users/${this.studentId}/name`, (data) => {
+      document.querySelector('.detail-author').textContent = data + ' • ';
+    });
+  }
+}
 export class SetCardRegister {
   constructor (db) {
     this.db = db;
     this.setCard();
   }
   setCard () {
-    console.log(this.checkIfIdentical('hi', 'hi')); 
     document.querySelector('#register-button').addEventListener('click', () => {
-      let mailField = document.querySelector('#Email-1').value;
+      let mailField = document.querySelector('#Email-2').value;
       let passField = document.querySelector('#Password-2').value;
       let passField2 = document.querySelector('#Repeat-password-1').value;
       let userField = document.querySelector('#Username').value;
@@ -57,7 +83,10 @@ export class SetCardRegister {
 
       if (this.checkIfIdentical(passField, passField2)) {
         let user = new User(nameField, userField, mailField, passField, isStudentField, this.db);
-        setRegisterCreds(user.get(), this.db);
+        user.assignId((id) => {
+          user.id = id;
+          setRegisterCreds(user.get(), this.db);
+        })
       }
     })
   }
@@ -74,7 +103,6 @@ function checkLoginCreds (mailField, passField) {
   let users = this.db.get('users', data => {
     data.forEach(user => {
       if (user.email == mailField && user.password == passField) {
-        console.log('found');
         let session = new Session(user.id);
         return session.setSession('login');
       }
@@ -83,7 +111,6 @@ function checkLoginCreds (mailField, passField) {
 }
 
 function setRegisterCreds (student, db) {
-  console.log('test');
   db.set(`users/${student.id}`, student);
 }
 
@@ -101,7 +128,7 @@ export class SetAuthorCard {
 
 function setControls (like, db, dataPath) {
   like.addEventListener('click', () => {
-    db.update(dataPath, 'likes', parseInt(like.textContent) + 1);
+    db.update(dataPath, {'likes': parseInt(like.textContent) + 1});
   }, false
   );
 }
@@ -113,10 +140,16 @@ export class User {
     this.email = email;
     this.password = password;
     this.isStudent = isStudent;
-    this.id = db.dbRef.child('posts').push().key;
+    this.db = db;
+    this.id = null;
   }
   get () {
     return {'name': this.name, 'username': this.username, 'email': this.email, 'password': this.password, 'isStudent': this.isStudent, 'id': this.id, 'socialLinks': ' ', 'profileViews': ' '};
+  }
+  assignId (callback) {
+    this.db.dbRef.ref('users').limitToLast(1).on('child_added', (childSnapshot) => {
+      callback(childSnapshot.val().id + 1);
+    });
   }
 }
 

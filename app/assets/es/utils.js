@@ -35,13 +35,14 @@ export class DB {
   
   update (dataPath, value) {
     this.dbRef.ref(dataPath).update(
-      data
+      value
     );
   }
   set (dataPath, value) {
     this.dbRef.ref(dataPath).set(
       value
     );
+    return true;
   }
 }
 
@@ -61,7 +62,8 @@ export class Session {
     if (status == 'login') {
       this.ls.set('cartspire_session', this.userId);
       return true;
-    } else {
+    }
+    else {
       this.ls.remove('cartspire_session');
     }
   }
@@ -72,16 +74,13 @@ export class LocalStorage {
     if (typeof Storage !== 'undefined') {
       this.ls = localStorage;
     } else {
-      console.log(
-        'Local storage is not supported on this browser, upgrade your browser for the best experience'
-      );
+      console.log('Local storage is not supported on this browser, upgrade your browser for the best experience');
     }
   }
 
   get (item) {
     return this.ls.getItem(item);
   }
-
   set (item, value) {
     this.ls.setItem(item, value);
   }
