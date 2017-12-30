@@ -24,15 +24,6 @@ export class DB {
     return false;
   }
 
-  /*getWhere (dataPath, key, condition) {
-    while (data)
-      let data = this.get(dataPath);
-
-
-
-      if (data.key == condition
-  }*/
-  
   update (dataPath, value) {
     this.dbRef.ref(dataPath).update(
       value

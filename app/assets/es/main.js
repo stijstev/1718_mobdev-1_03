@@ -39,6 +39,7 @@ class App {
           });
         });
       }
+      this.setHeaderImage('https://firebasestorage.googleapis.com/v0/b/mobdev-i-cartspire.appspot.com/o/AHS_MARIAKERKE.jpg?alt=media&token=6571fd22-2938-4af9-91c5-743a5bf79e54', document.querySelector('.header-image__container'));
     }
     if (this.session.currentPage == 'Cartspire | Profile' && this.session.userId) {
       this.db.get(`users/${this.session.userId}`, (data) => {
@@ -57,6 +58,7 @@ class App {
           bio.style.display = 'none'; //WIP
         }
       });
+      this.setHeaderImage('https://firebasestorage.googleapis.com/v0/b/mobdev-i-cartspire.appspot.com/o/LOKAAL.jpg?alt=media&token=697e40e4-e87f-415d-83ab-0a8d2187f2cb', document.querySelector('.header-image__container'));
     }
     if (this.session.currentPage == 'Cartspire | Blog') {
       let tempCards = document.querySelectorAll(`.card-project`);
@@ -67,6 +69,7 @@ class App {
           });
         });
       }
+      this.setHeaderImage('https://firebasestorage.googleapis.com/v0/b/mobdev-i-cartspire.appspot.com/o/MEDIATHEEK.png?alt=media&token=1fa0bf02-ed62-4a25-ae3f-bcf49de097ff', document.querySelector('.header-image__container'));
     }
     if (this.session.currentPage == 'Cartspire | Login') {
       console.log('hello');
@@ -79,7 +82,10 @@ class App {
         document.querySelector('.detail-desc').textContent = data.description;
         this.setHeaderImage(data.images.thumbnail, document.querySelector('.header-image__container'));
       })
-    } else {
+    }
+    if (this.session.currentPage == 'Cartspire | Opleiding') {
+      this.setHeaderImage('https://firebasestorage.googleapis.com/v0/b/mobdev-i-cartspire.appspot.com/o/AHS_MARIAKERKE.jpg?alt=media&token=6571fd22-2938-4af9-91c5-743a5bf79e54', document.querySelectorAll('.header-image__container')[0]);
+      this.setHeaderImage('https://firebasestorage.googleapis.com/v0/b/mobdev-i-cartspire.appspot.com/o/MEDIATHEEK.png?alt=media&token=1fa0bf02-ed62-4a25-ae3f-bcf49de097ff', document.querySelectorAll('.header-image__container')[1]);
     }
   }
 

@@ -36,18 +36,20 @@ export class SetCardLogin {
     document.querySelector('#login-button').addEventListener('click', () => {
       let mailField = document.querySelector('#Email-1').value;
       let passField = document.querySelector('#Password-1').value;
-      checkLoginCreds(mailField, passField);
+      checkLoginCreds(mailField, passField, this.db);
     }, false
   )};
 }
 
 export class SetDetailCard {
-  constructor (data, db) {
-    console.log(data);
-    this.title = data.name;
-    this.studentId = data.studentIds[0];
-    this.date = `${data.createdDate.day} / ${data.createdDate.month} / ${data.createdDate.year}`;
-    this.tags = data.tagIds;
+  constructor (project, db) {
+    console.log(project);
+    this.title = project.name;
+    this.likes = project.stats.likes;
+    this.id = project.id;
+    this.studentId = project.studentIds[0];
+    this.date = `${project.createdDate.day} / ${project.createdDate.month} / ${project.createdDate.year}`;
+    this.tags = project.tagIds;
     this.db = db;
     this.setCard();
   }
@@ -65,6 +67,9 @@ export class SetDetailCard {
     this.db.get(`users/${this.studentId}/name`, (data) => {
       document.querySelector('.detail-author').textContent = data + ' • ';
     });
+    let elLikes = document.querySelector('.card-likes');
+    elLikes.textContent = this.likes;
+    setControls(elLikes, this.db, `projects/${this.id}/stats`);
   }
 }
 export class SetCardRegister {
@@ -99,12 +104,13 @@ export class SetCardRegister {
   }
 }
 
-function checkLoginCreds (mailField, passField) {
-  let users = this.db.get('users', data => {
+function checkLoginCreds (mailField, passField, db) {
+  let users = db.get('users', data => {
     data.forEach(user => {
       if (user.email == mailField && user.password == passField) {
         let session = new Session(user.id);
-        return session.setSession('login');
+        session.setSession('login');
+        window.location = "/profile";
       }
     });
   });
