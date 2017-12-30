@@ -20,7 +20,6 @@
   padding: 10px;
 }
 
-/* Ik heb containers gezet rond sommige inputs zodat de border-bottoms lijntje er mooi uitzien zoals in de visual designs */
 .password-container {
   border-bottom: $base-border;
   padding-bottom: 30px;
@@ -41,40 +40,6 @@
   border-radius: $base-radius;
   width: 100%;
 }
-
-/* de checkbox een aparte figuur krijgen heb ik nog niet kunnen fixen. */
-
-/*
-.radio {
-  margin: 0.5rem;
-
-  input[type='radio'],
-  input[type='checkbox'] {
-    position: absolute;
-    opacity: 0;
-
-    + .radio-label {
-      &::before {
-        content: '';
-        background: #fff;
-        border-radius: 100%;
-        border: $base-border;
-        display: inline-block;
-        width: 1.4em;
-        height: 1.4em;
-        position: relative; 
-        top: -0.05em;
-        left: 15em;
-        vertical-align: middle;
-      }
-
-      &:checked::before {
-        background-color: red;
-      }
-    }
-  }
-}
-*/
 
 .radio-col {
   margin-top: 10px;
